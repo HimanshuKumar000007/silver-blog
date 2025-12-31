@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | SilverPrice</title>
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           SHARED THEME (Matches Legal Pages)
+           ======================================== */
+        :root {
+            --brand-primary: #0f172a;
+            --brand-secondary: #1e293b;
+            --brand-accent: #0ea5e9;
+            --color-gold: #fbbf24;
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+            --radius-md: 12px;
+            --max-width: 900px;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        a { text-decoration: none; color: var(--brand-accent); transition: color 0.2s; }
+        a:hover { color: var(--brand-primary); }
+
+        /* Header */
+        .top-bar {
+            background: var(--brand-primary);
+            color: rgba(255,255,255,0.8);
+            font-size: 12px;
+            padding: 8px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo { font-size: 24px; font-weight: 800; color: white; letter-spacing: -0.5px; }
+        .logo span { color: var(--color-gold); }
+
+        .nav-desktop { display: flex; gap: 32px; }
+        .nav-desktop a { color: rgba(255,255,255,0.7); font-weight: 500; font-size: 14px; color:white;}
+        
+        /* Content Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-light);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--brand-primary);
+            margin-bottom: 8px;
+        }
+
+        .meta-date {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 20px;
+            font-family: var(--font-mono);
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--brand-primary);
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        p { margin-bottom: 16px; color: var(--text-muted); }
+
+        ul {
+            list-style: disc;
+            padding-left: 24px;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+        }
+
+        li { margin-bottom: 8px; }
+
+        .contact-box {
+            background: #f8fafc;
+            border: 1px dashed var(--border-light);
+            padding: 24px;
+            border-radius: 8px;
+            margin-top: 24px;
+        }
+
+        .email-link {
+            font-family: var(--font-mono);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .simple-footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .card { padding: 24px; }
+            h1 { font-size: 24px; }
+            .nav-desktop { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="top-bar">
+        <div>Trusted Market Data & Analysis</div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Silver<span>Price</span></a>
+            <nav class="nav-desktop">
+                <a href="index.html">← Back to Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Document -->
+    <div class="container">
+        <article class="card">
+            <h1>Disclaimer</h1>
+            <div class="meta-date">
+                Effective Date: 30 December 2025 &nbsp;|&nbsp; Last Updated: 30 December 2025
+            </div>
+
+            <p>The information provided on <strong>SilverPrice</strong> ("we", "our", "us", or "the website") is for general informational and educational purposes only.</p>
+            <p>All information on this website is provided in good faith; however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the website.</p>
+            <p>Your use of the website and your reliance on any information on the website is solely at your own risk.</p>
+
+            <h2>1. No Financial or Investment Advice</h2>
+            <p>Nothing on this website constitutes financial, investment, legal, or professional advice.</p>
+            <p>The content, tools, charts, prices, and data available on this website are provided for informational purposes only and should not be considered a recommendation to buy, sell, trade, or hold any asset, commodity, or financial instrument.</p>
+            <p>You should always consult with a qualified financial advisor or professional before making any financial decisions.</p>
+
+            <h2>2. Market Data and Third-Party Sources</h2>
+            <p>Market prices, charts, and other financial data displayed on this website are sourced from third-party providers such as TradingView, OANDA, FXCM, and other external data services.</p>
+            <p>We do not guarantee that this data is real-time, accurate, complete, or free of errors. Data may be delayed, interrupted, or subject to technical inaccuracies.</p>
+            <p>We are not responsible for any losses or damages arising from reliance on this information.</p>
+
+            <h2>3. External Links Disclaimer</h2>
+            <p>This website may contain links to other websites or third-party services that are not owned or controlled by us.</p>
+            <p>We do not endorse, control, or assume responsibility for the content, privacy policies, or practices of any third-party websites or services.</p>
+
+            <h2>4. Limitation of Liability</h2>
+            <p>Under no circumstances shall SilverPrice, its owners, employees, partners, or affiliates be liable for any direct, indirect, incidental, consequential, or special damages arising out of or in connection with the use of the website.</p>
+            <p>This includes, without limitation, loss of profits, financial loss, data loss, or business interruption.</p>
+
+            <h2>5. Consent</h2>
+            <p>By using our website, you hereby consent to this Disclaimer and agree to its terms.</p>
+
+            <h2>6. Contact Information</h2>
+            <div class="contact-box">
+                <p style="margin-bottom: 0;">If you have any questions about this Disclaimer, please contact us at:</p>
+                <br>
+                <p>Email: <a href="mailto:humanshuk8@gmail.com" class="email-link">humanshuk8@gmail.com</a></p>
+            </div>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="simple-footer">
+        &copy; 2025 SilverPrice. All rights reserved. <br>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+    </footer>
+
+</body>
+</html>

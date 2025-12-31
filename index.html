@@ -1,0 +1,971 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Live Silver Price Today | XAG/USD Spot Rate & Charts</title>
+    <meta name="description"
+        content="Track the live silver price today in USD per ounce. Real-time XAG/USD spot charts, historical data, and precious metal investment calculator.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-primary: #0f172a;
+            --brand-secondary: #1e293b;
+            --brand-accent: #0ea5e9;
+            --color-up: #10b981;
+            --color-down: #ef4444;
+            --color-gold: #fbbf24;
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --max-width: 1280px;
+            --header-height: 70px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* Critical for mobile */
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img,
+        iframe {
+            max-width: 100%;
+        }
+
+        /* Prevents widgets from overflowing */
+
+        /* Header & Ticker */
+        .ticker-wrap {
+            height: 46px;
+            overflow: hidden;
+            background: var(--brand-primary);
+        }
+
+        .top-bar {
+            background: var(--brand-primary);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+            padding: 8px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--color-up);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        .main-header {
+            background: var(--brand-primary);
+            height: var(--header-height);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--color-gold);
+        }
+
+        .nav-desktop {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-desktop a {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+            background: none;
+            border: none;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(160deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+            color: white;
+            padding: 60px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            word-wrap: break-word;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .price-card-hero {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: -40px auto 40px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 32px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Grid Fix for Overflow */
+        main,
+        aside {
+            min-width: 0;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+
+        /* Stats & Calculator */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+        }
+
+        .stat-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .stat-val {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 4px;
+            font-family: var(--font-mono);
+        }
+
+        .calc-group {
+            margin-bottom: 16px;
+        }
+
+        .calc-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--brand-secondary);
+        }
+
+        .calc-input,
+        .calc-select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-family: var(--font-mono);
+            font-size: 16px;
+            background: var(--bg-body);
+        }
+
+        .calc-result-box {
+            margin-top: 20px;
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px dashed var(--border-light);
+        }
+
+        .sticky-widget {
+            position: sticky;
+            top: 90px;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 500px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-light);
+            text-align: left;
+        }
+
+        th {
+            background: #f8fafc;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .text-green {
+            color: var(--color-up);
+            font-weight: 600;
+        }
+
+        .text-red {
+            color: var(--color-down);
+            font-weight: 600;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            max-width: var(--max-width);
+            margin: 60px auto;
+            padding: 0 24px;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--brand-primary);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-img {
+            height: 180px;
+            background: #eee;
+            position: relative;
+        }
+
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--brand-accent);
+            color: white;
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .blog-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--brand-primary);
+        }
+
+        .blog-excerpt {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brand-accent);
+            margin-top: auto;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* ========================================
+           RESPONSIVE FIXES
+           ======================================== */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin-top: 24px;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .price-card-hero {
+                min-width: 100%;
+                width: 100%;
+            }
+
+            .sticky-widget {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 16px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .nav-desktop {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .card {
+                padding: 16px;
+            }
+
+            /* Reduce padding on mobile */
+            .price-card-hero {
+                padding: 16px;
+            }
+
+            /* Fix Blog Overflow */
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* About Content Styling */
+        .about-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--brand-primary);
+            margin: 24px 0 12px;
+        }
+
+        .about-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--brand-secondary);
+            margin: 16px 0 8px;
+        }
+
+        .about-content p {
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .about-content ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        .about-content li {
+            margin-bottom: 8px;
+        }
+
+        .about-content strong {
+            color: var(--brand-secondary);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Ticker Tape -->
+    <div class="ticker-wrap">
+        <div class="tradingview-widget-container" style="height: 46px; width: 100%;">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{ "proName": "OANDA:XAGUSD", "title": "Silver" }, { "proName": "OANDA:XAUUSD", "title": "Gold" }],
+                            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": false, "displayMode": "adaptive", "locale": "en"
+                    }
+                </script>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="top-bar">
+        <div class="market-status"><span class="status-dot"></span>MARKET OPEN · Update in <span
+                id="countdown">05</span>s</div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="/" class="logo">Silver<span>Price</span></a>
+            <nav class="nav-desktop">
+                <a href="#dashboard">Dashboard</a>
+                <a href="#charts">Charts</a>
+                <a href="#news">News</a>
+            </nav>
+            <button class="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Live Silver Market</h1>
+                <p class="hero-sub">Real-time XAG/USD spot price streaming directly from global exchanges.</p>
+                <div style="font-size: 13px; opacity: 0.7;">● Data is 100% Real-Time</div>
+            </div>
+
+            <div class="price-card-hero">
+                <div class="tradingview-widget-container" style="height: 200px; width: 100%;">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript"
+                        src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                            {
+                                "symbol": "OANDA:XAGUSD", "width": "100%", "colorTheme": "dark", "isTransparent": true, "locale": "en"
+                            }
+                        </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Main Column -->
+        <main>
+            <!-- Charts -->
+            <article class="card" id="charts">
+                <div class="section-header">
+                    <h2 class="section-title">Silver Price Chart (XAGUSD)</h2>
+                </div>
+                <div class="tradingview-widget-container" style="height: 500px; width: 100%;">
+                    <div id="tradingview_silver_chart" style="height: 100%; width: 100%;"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                        new TradingView.widget({
+                            "autosize": true, "symbol": "OANDA:XAGUSD", "interval": "D", "timezone": "America/New_York", "theme": "light", "style": "1", "locale": "en", "toolbar_bg": "#f1f3f6", "enable_publishing": false, "container_id": "tradingview_silver_chart"
+                        });
+                    </script>
+                </div>
+            </article>
+
+
+
+            <!-- About Section -->
+            <article class="card">
+                <div class="section-header">
+                    <h2 class="section-title">About Silver</h2>
+                </div>
+                <div class="about-content">
+                    <h3>The Industrial Powerhouse: Silver's Indispensable Role in Modern Technology</h3>
+                    <p>While silver's history is steeped in currency and treasure, its modern story is one of science
+                        and engineering. This is where its narrative becomes truly compelling and its future value is
+                        forged. Silver possesses a unique and unrivaled triad of physical properties that make it not
+                        just useful, but absolutely critical for a vast and growing range of industrial applications. It
+                        boasts the highest electrical conductivity of all metals, the highest thermal conductivity of
+                        all metals, and the highest reflectivity of any metal. These are not just trivia points; they
+                        are the foundational characteristics that make silver an irreplaceable component in the world's
+                        most advanced technologies.</p>
+
+                    <h3>Electronics and the Digital Age: The Conductive Backbone</h3>
+                    <p>Silver is the undisputed cornerstone of the electronics industry. In a world driven by efficiency
+                        and the minimization of energy loss, its unparalleled electrical conductivity is paramount.
+                        Every time an electrical current passes through a material, some energy is lost as heat; silver
+                        minimizes this loss better than any other element, including copper. This property is crucial
+                        for reliability, performance, and the miniaturization of components.</p>
+
+                    <p><strong>Ubiquitous in Everyday Devices:</strong> From the intricate printed circuit boards (PCBs)
+                        in a laptop to the simple membrane switches in a keyboard or microwave, silver is essential. It
+                        is found as a critical component in nearly every smartphone, computer, television, and consumer
+                        electronic device. Its reliability ensures that connections do not fail, making it vital for
+                        everything from on/off buttons to complex internal circuitry.</p>
+
+                    <p><strong>The Future is Silver-Coated:</strong> The rollout of 5G technology and the future of
+                        telecommunications are heavily dependent on silver. The higher-frequency signals used in 5G
+                        require components with exceptional performance and signal integrity. Silver-coated components
+                        and connectors are essential to minimize signal loss and ensure the speed and reliability that
+                        5G promises. As the Internet of Things (IoT) connects billions of devices—from smart home
+                        appliances to industrial sensors—each new device will require silver-based components like RFID
+                        tags and micro-circuitry, creating a massive new source of demand. Data centers, the backbone of
+                        the cloud, also rely on silver in their servers and switching gear to handle immense electrical
+                        loads efficiently.</p>
+
+                    <h3>The Green Energy Revolution: Fueling a Sustainable Future</h3>
+                    <p>Arguably the most significant and explosive driver of industrial silver demand today is the
+                        global transition to sustainable energy and transportation. Silver is not just a participant in
+                        this revolution; it is an enabling element.</p>
+
+                    <p><strong>Solar Panels (Photovoltaics):</strong> Silver is the key that unlocks the sun's energy.
+                        In the manufacturing of crystalline silicon photovoltaic (PV) cells, a silver paste is
+                        screen-printed onto the cell's surface to create a grid of electrical contacts. These lines act
+                        as "busbars," collecting the electrons freed by sunlight and conducting them out of the cell to
+                        generate an electrical current. While researchers are constantly trying to reduce the amount of
+                        silver used (a process called "thrifting"), it remains incredibly difficult to replace without a
+                        significant loss in the cell's efficiency. As the world installs terawatts of new solar capacity
+                        to meet climate goals, the demand for this silver paste is projected to grow exponentially,
+                        consuming hundreds of millions of ounces per year.</p>
+
+                    <p><strong>Electric Vehicles (EVs) and the Electrification of Everything:</strong> An electric
+                        vehicle contains significantly more silver than its internal combustion engine counterpart—some
+                        estimates suggest nearly double the amount. This is because every electrical connection in a car
+                        benefits from silver's superior conductivity and durability. It is used extensively in power
+                        distribution systems, battery management systems, charging points and infrastructure, electrical
+                        contacts for windows and seat heaters, and even in the glass as silver-coated films for
+                        defrosting. As the world moves towards the "electrification of everything," from transport to
+                        heating, the demand for highly efficient and reliable electrical components—all containing
+                        silver—will continue its powerful upward trend.</p>
+
+                    <h3>Medicine and Healthcare: The Antimicrobial Shield</h3>
+                    <p>Silver's natural antimicrobial and biocidal properties have been recognized for centuries, but
+                        modern science has harnessed them with incredible precision. The power lies in the release of
+                        silver ions (Ag+), which are lethal to a broad spectrum of bacteria, viruses, and other
+                        pathogens by disrupting their cellular processes.</p>
+
+                    <p><strong>Infection Prevention:</strong> In an age of growing antibiotic resistance, silver's role
+                        is more critical than ever. It is incorporated into wound dressings to prevent infection and
+                        promote healing. It is used as a coating for critical medical devices such as catheters,
+                        breathing tubes, and surgical instruments to prevent the formation of biofilms and reduce the
+                        risk of dangerous hospital-acquired infections.</p>
+
+                    <p><strong>Purification:</strong> Silver's biocidal properties make it an effective agent for water
+                        purification, used in filters that can provide safe drinking water in both consumer and
+                        emergency-relief settings.</p>
+
+                    <h3>Other Essential Industrial Uses</h3>
+                    <p>Beyond the headline applications, silver is a workhorse in many other essential industries:</p>
+                    <ul>
+                        <li><strong>Brazing and Soldering:</strong> Silver-based alloys are prized for their ability to
+                            create strong, ductile, and highly conductive joints between metals, essential in everything
+                            from plumbing and refrigeration to aerospace engineering.</li>
+                        <li><strong>Chemical Catalyst:</strong> Silver acts as a crucial catalyst in the chemical
+                            industry, most notably for the production of ethylene oxide (a key precursor for making
+                            polyester, plastics, and antifreeze) and formaldehyde.</li>
+                        <li><strong>Mirrors and Coatings:</strong> Due to its unmatched reflectivity, silver is the
+                            material of choice for high-quality mirrors and specialty coatings on glass, which can help
+                            reflect heat and improve the energy efficiency of buildings.</li>
+                        <li><strong>Photography:</strong> While its use has been dramatically reduced by the digital
+                            revolution, silver halides were the foundation of traditional film photography for over a
+                            century, and it is still used in specialty applications like X-rays.</li>
+                    </ul>
+
+                    <h3>Conclusion: A Metal of Two Worlds with a Consumptive Future</h3>
+                    <p>To track the price of silver is to track the pulse of two different, yet interconnected, global
+                        narratives. On one hand, it remains a barometer of global economic sentiment—a hedge against
+                        inflation, a safe haven from instability, and a tangible store of wealth. On the other hand, it
+                        is an indispensable raw material fueling the Fourth Industrial Revolution and the global
+                        transition to a sustainable, green-energy future.</p>
+                    <p>This unique dual identity—a monetary relic and a futuristic metal—is what makes silver so
+                        fascinating and complex. It is both a shield against the economic uncertainties of today and a
+                        critical, indispensable component in building the technologies of tomorrow.</p>
+                    <p>Crucially, this is where it differs most profoundly from gold. The vast majority of all gold ever
+                        mined still exists and is primarily hoarded in vaults. A significant portion of the silver mined
+                        each year, however, is irretrievably consumed by industry. It is scattered in trace amounts
+                        across billions of electronic devices, embedded in solar panels, and used in chemical processes,
+                        making it uneconomical to recycle in most cases. This constant and growing industrial
+                        consumption creates a strong and rising demand floor that is independent of investment
+                        sentiment. Therefore, a deep understanding of silver is essential for anyone seeking to
+                        comprehend the critical intersection of global finance, technological progress, and the green
+                        energy transition.</p>
+                </div>
+            </article>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="card" id="technical-analysis">
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <div class="tradingview-widget-copyright"><a
+                            href="https://www.tradingview.com/symbols/SILVER/?exchange=TVC" rel="noopener nofollow"
+                            target="_blank"><span class="blue-text">SILVER
+                                analysis</span></a><span class="trademark">
+                            by TradingView</span></div>
+                    <script type="text/javascript"
+                        src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                            {
+                                "interval": "1m",
+                                    "width": "100%",
+                                        "isTransparent": false,
+                                            "height": 450,
+                                                "symbol": "TVC:SILVER",
+                                                    "showIntervalTabs": true,
+                                                        "displayMode": "single",
+                                                            "locale": "en",
+                                                                "colorTheme": "light"
+                            }
+                        </script>
+                </div>
+                <!-- TradingView Widget END -->
+            </div>
+
+            <!-- Ratios Removed -->
+        </aside>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="news">
+        <div class="blog-header">
+            <h2>Market Insights</h2>
+        </div>
+        <div class="blog-grid">
+            <!-- Article 5 (Newest) -->
+            <article class="blog-card">
+                <div class="blog-img"><img
+                        src="https://images.unsplash.com/photo-1624823184646-a67b93803cb6?auto=format&fit=crop&w=600"
+                        alt="Gold"><span class="blog-badge" style="background: #eab308;">Prediction</span></div>
+                <div class="blog-content">
+                    <div class="blog-title">Gold Price Prediction 2025</div>
+                    <p class="blog-excerpt">Central bank whales and falling interest rates set the stage for a historic
+                        breakout...</p>
+                    <a href="/Blogs/5_blog.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+            <!-- Article 1 -->
+            <article class="blog-card">
+                <div class="blog-img"><img
+                        src="https://images.unsplash.com/photo-1624823183491-4d7d24d27145?auto=format&fit=crop&w=600"
+                        alt="Silver"><span class="blog-badge">Analysis</span></div>
+                <div class="blog-content">
+                    <div class="blog-title">Silver Breaks Key Resistance</div>
+                    <p class="blog-excerpt">Technical analysis suggests a bullish trend as industrial demand
+                        surges...
+                    </p>
+                    <a href="/Blogs/1_blog.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+            <!-- Article 2 -->
+            <article class="blog-card">
+                <div class="blog-img"><img
+                        src="https://images.unsplash.com/photo-1579621970563-ebec7560eb3e?auto=format&fit=crop&w=600"
+                        alt="Chart"><span class="blog-badge">Economy</span></div>
+                <div class="blog-content">
+                    <div class="blog-title">Inflation Data Impact</div>
+                    <p class="blog-excerpt">Latest CPI reports show sticky inflation, driving investors to
+                        safe
+                        havens...</p>
+                    <a href="/Blogs/2_blog.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+            <!-- Article 3 -->
+            <article class="blog-card">
+                <div class="blog-img"><img
+                        src="https://images.unsplash.com/photo-1599930113854-d6d7fd521f10?auto=format&fit=crop&w=600"
+                        alt="Solar"><span class="blog-badge">Industrial</span></div>
+                <div class="blog-content">
+                    <div class="blog-title">Solar Demand Record</div>
+                    <p class="blog-excerpt">Photovoltaic sector consumption hits new highs, squeezing
+                        supply...</p>
+                    <a href="/Blogs/3_blog.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+            <!-- Article 4 -->
+            <div id="hidden-blogs" style="display: none; width: 100%; display: contents;">
+                <article class="blog-card">
+                    <div class="blog-img"><img
+                            src="https://images.unsplash.com/photo-1611974765270-ca12586343bb?auto=format&fit=crop&w=600"
+                            alt="Forex"><span class="blog-badge">Forex</span></div>
+                    <div class="blog-content">
+                        <div class="blog-title">USD Weakness & Metals</div>
+                        <p class="blog-excerpt">Falling dollar index provides strong support for commodity
+                            prices...</p>
+                        <a href="/Blogs/4_blog.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <button id="show-all-btn" onclick="toggleBlogs()" style="
+                background: white; 
+                border: 1px solid #e2e8f0; 
+                padding: 12px 30px; 
+                border-radius: 99px; 
+                font-weight: 600; 
+                color: #0f172a; 
+                cursor: pointer; 
+                transition: 0.2s;
+                font-family: inherit;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            ">Show All Posts</button>
+        </div>
+
+        <script>
+            function toggleBlogs() {
+                var hiddenDiv = document.getElementById("hidden-blogs");
+                var btn = document.getElementById("show-all-btn");
+
+                // Using 'contents' display to respect the parent grid layout, 
+                // but checking if we need to set it to 'contents' (for grid) or 'block'
+                // Since parent is .blog-grid, we want the children of #hidden-blogs to be direct children effectively.
+                // However, display: contents removes the wrapper from the accessibility tree and visual tree.
+
+                hiddenDiv.style.display = "contents";
+                btn.style.display = "none";
+            }
+        </script>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size:14px; color:rgba(255,255,255,0.7)">Real-time precious metals analytics.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#news">News</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:humanshuk8@gmail.com">humanshuk8@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 SilverPrice. All rights reserved.</div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Timer
+            let cd = 5, cdEl = document.getElementById('countdown');
+            setInterval(() => { cd--; if (cd < 0) cd = 5; cdEl.innerText = cd.toString().padStart(2, '0'); }, 1000);
+
+            // Menu
+            const btn = document.querySelector('.menu-toggle'), nav = document.querySelector('.nav-desktop');
+            btn.addEventListener('click', () => {
+                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+                if (nav.style.display === 'flex') {
+                    nav.style.flexDirection = 'column'; nav.style.position = 'absolute'; nav.style.top = '70px'; nav.style.left = '0'; nav.style.width = '100%'; nav.style.background = 'var(--brand-primary)'; nav.style.padding = '20px';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Solar Sector's Record Silver Demand Squeezes Global Supply | SilverPrice</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Branding */
+            --brand-primary: #0f172a;
+            --brand-secondary: #1e293b;
+            --brand-accent: #0ea5e9;
+            --brand-green: #10b981;
+            /* Added for Solar Theme */
+            --color-gold: #fbbf24;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar (Green for 'Energy' theme) */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: var(--brand-green);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Ticker Tape */
+        .ticker-wrap {
+            height: 40px;
+            overflow: hidden;
+            background: var(--brand-primary);
+        }
+
+        /* Header */
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--color-gold);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--brand-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 0 0 1px var(--border-light);
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-text strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        /* Highlight Box - Green Style */
+        .highlight-box {
+            background: #f0fdf4;
+            /* Light Green */
+            border-left: 4px solid var(--brand-green);
+            padding: 24px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .highlight-box h3 {
+            font-size: 18px;
+            color: #166534;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #14532d;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: var(--brand-primary);
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 3.5em;
+            line-height: 0.8;
+            font-weight: 700;
+            padding-right: 8px;
+            padding-top: 4px;
+            color: var(--brand-green);
+            font-family: var(--font-display);
+        }
+
+        blockquote {
+            font-size: 22px;
+            font-style: italic;
+            color: var(--brand-secondary);
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 30px 20px;
+            margin: 40px 0;
+        }
+
+        /* Sidebar Widgets */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 10px;
+        }
+
+        /* Author Box */
+        .author-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .author-avatar-lg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-family: var(--font-display);
+            margin-bottom: 0;
+        }
+
+        /* Sticky Share Sidebar */
+        .share-sidebar {
+            position: absolute;
+            left: -60px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 18px;
+            box-shadow: var(--shadow-card);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            color: var(--brand-accent);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .post-body {
+                font-size: 17px;
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Reading Progress -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Ticker -->
+    <div class="ticker-wrap">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{ "proName": "OANDA:XAGUSD", "title": "Silver" }, { "proName": "AMEX:TAN", "title": "Solar ETF" }, { "proName": "NASDAQ:TSLA", "title": "Tesla" }, { "proName": "TVC:US10Y", "title": "US 10Y Yield" }],
+                            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": false, "displayMode": "adaptive", "locale": "en"
+                    }
+                </script>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="/index.html" class="logo">Silver<span>Price</span></a>
+            <a href="/index.html" class="nav-link">
+                <span>&#8592;</span> Dashboard
+            </a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <!-- Social Share Sticky -->
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn" title="Twitter">𝕏</div>
+                <div class="share-btn" title="Facebook">f</div>
+                <div class="share-btn" title="LinkedIn">in</div>
+                <div class="share-btn" title="Copy Link">🔗</div>
+            </div>
+        </div>
+
+        <!-- Main Article -->
+        <main class="article-content">
+            <div class="breadcrumb">Market Report &bull; Industrial Commodities</div>
+            <h1>Solar Sector's Record Silver Demand Squeezes Global Supply</h1>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=10b981&color=fff&size=128"
+                    class="author-avatar-sm" alt="Author">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher &bull; Dec 31, 2025</span>
+                </div>
+            </div>
+
+            <!-- Main Image -->
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Solar Farm at Sunset" style="width:100%; margin-bottom: 32px; box-shadow: var(--shadow-card);">
+
+            <article class="post-body">
+                <div class="highlight-box">
+                    <h3>Report Findings:</h3>
+                    <ul>
+                        <li><strong>Record Consumption:</strong> Photovoltaic (PV) demand hits all-time high.</li>
+                        <li><strong>Structural Deficit:</strong> Industrial consumption outstripping mine supply.</li>
+                        <li><strong>Physical Squeeze:</strong> Significant drawdowns in NY and London vaults.</li>
+                    </ul>
+                </div>
+
+                <p class="drop-cap"><strong>NEW YORK/LONDON/SINGAPORE</strong> – A seismic shift is underway in the
+                    global silver market, driven by an unprecedented and powerful surge in demand from the solar energy
+                    sector. Our latest market analysis reveals that silver consumption by the photovoltaic (PV) industry
+                    has shattered all previous records this year, hitting new all-time highs that are fundamentally
+                    reshaping the metal's supply and demand dynamics. This is not a temporary spike but the acceleration
+                    of a long-term structural trend. The sheer volume of silver now being consumed by solar panel
+                    manufacturers is creating a significant and deepening squeeze on global supply, a reality that is
+                    beginning to ripple through the entire precious metals complex and catch many market participants by
+                    surprise.</p>
+
+                <h2>The Engine of the Boom: A Global Green Energy Mandate</h2>
+                <p>The root cause of this explosive demand is the global, government-backed mandate to transition to
+                    renewable energy. Across the world, from North America to Europe and especially in Asia, nations are
+                    aggressively expanding their solar power capacity at a breakneck pace to meet ambitious climate
+                    goals. This is no longer a niche industry; it is a global priority backed by trillions of dollars in
+                    public and private investment.</p>
+                <p>Solar panels work by using photovoltaic cells to convert sunlight into electricity. The key to this
+                    process is silver. A specialized silver paste is screen-printed onto the surface of each solar cell.
+                    This paste forms a fine grid of conductive lines that capture the electrons freed by sunlight and
+                    channel them into an electrical current. Silver's physical properties are what make it the
+                    undisputed champion for this role: it has the highest electrical conductivity of any element on
+                    Earth. While other metals can conduct electricity, they do so less efficiently, meaning more of the
+                    sun's precious energy would be lost as heat before it could be harnessed.</p>
+                <p>For years, the solar industry has been working on "thrifting"—finding ways to use less silver in each
+                    panel to cut costs. They have been remarkably successful, reducing the silver content per cell by
+                    over 80% in the last decade. However, this progress is now being completely overwhelmed by the sheer
+                    volume of new panels being produced. Global solar installations are growing at a staggering
+                    double-digit percentage rate annually. The result is simple math: even if each panel uses a tiny bit
+                    less silver, making millions upon millions more panels means the industry's total silver consumption
+                    is skyrocketing. Our research indicates that the solar sector alone is now on track to consume a
+                    massive portion of the total annual silver supply, a share that is growing much faster than anyone
+                    had predicted just a few years ago.</p>
+
+                <h2>The Supply Side Squeeze: A Widening Deficit</h2>
+                <p>This relentless demand from the solar industry is colliding with a very tight global supply picture,
+                    creating the perfect storm for a market squeeze.</p>
+                <p>The amount of silver pulled from the ground each year (mine supply) has been relatively flat for
+                    nearly a decade. Discovering and developing new, high-grade primary silver mines is an incredibly
+                    difficult, expensive, and time-consuming process, often taking ten to fifteen years from discovery
+                    to first production. Furthermore, a large portion of silver is produced as a byproduct of mining for
+                    other metals like copper, lead, and zinc. This means that silver production is often tied to the
+                    market dynamics of these other base metals, not just the price of silver itself.</p>
+                <p>The result is a growing structural deficit. This is a situation where the total demand for silver
+                    from all sources (industry, investment, jewelry) is consistently higher than the total supply (new
+                    mine production plus recycling). When this happens, the market has to make up the difference by
+                    drawing down on the world's above-ground inventories—the silver held in vaults and warehouses.</p>
+                <p>Our analysis shows that these inventories are now being drawn down at an alarming rate. The massive
+                    vaults in London and New York, which are the backbone of the global physical silver market, have
+                    seen a significant and sustained outflow of metal. This isn't paper silver being traded; this is
+                    real, physical silver leaving the warehouses to be turned into solar panels, electronics, and other
+                    industrial products. This tightening of the physical market is a critical signal that the squeeze is
+                    real and is likely to intensify.</p>
+
+                <h2>The Broader Market Implications: A New Floor for Prices</h2>
+                <p>This fundamental shift has profound implications for the silver market. For decades, the silver price
+                    was often driven by speculative investment demand, making it notoriously volatile. While investment
+                    will always play a role, the explosive growth of the solar sector has introduced a new and powerful
+                    dynamic.</p>
+                <p>A huge and growing portion of silver demand is now non-discretionary and price-inelastic. This means
+                    that solar panel manufacturers need silver to make their products, and they will buy it at almost
+                    any price because it represents only a small fraction of a panel's total cost, but there is no
+                    viable substitute that offers the same efficiency. This creates a strong and rising "demand floor"
+                    under the silver price.</p>
+                <p>This industrial demand is also unique because it is largely consumptive. The silver used in a solar
+                    panel is, for all practical purposes, gone forever. It is scattered in such tiny amounts that it is
+                    currently not economical to recycle it when the panel reaches the end of its 25-year life. This is
+                    in stark contrast to gold, where almost all of the metal ever mined is still held in vaults as an
+                    investment. Every year, a significant percentage of the world's silver supply is effectively used up
+                    and taken off the market permanently.</p>
+
+                <h2>Conclusion</h2>
+                <p>The record-breaking demand from the solar industry is the single most important fundamental story in
+                    the silver market today. It is transforming silver from a simple precious metal into a critical
+                    strategic commodity for the 21st-century green energy transition. This relentless and
+                    price-insensitive industrial consumption is creating a sustained supply deficit that is steadily
+                    draining global inventories. While market prices can fluctuate in the short term, this underlying
+                    structural squeeze is creating a powerful and undeniable pressure that is likely to drive a
+                    significant revaluation of silver in the months and years to come. The era of viewing silver as just
+                    "gold's little brother" is over; it has now firmly established its own powerful and compelling
+                    industrial identity.</p>
+                <p
+                    style="font-size: 13px; color: #64748b; font-style: italic; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    Disclaimer: This article is for educational purposes only and does not constitute financial advice.
+                </p>
+            </article>
+
+            <!-- Author Box -->
+            <div class="author-box">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=10b981&color=fff&size=128"
+                    class="author-avatar-lg" alt="Himanshu Kumar">
+                <div class="author-info">
+                    <h4>About Himanshu Kumar</h4>
+                    <p>Himanshu is an Independent Market Researcher specializing in industrial commodities and the Green
+                        Energy transition. He analyzes the intersection of photovoltaic technology and precious metals
+                        supply chains.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sticky-wrapper">
+
+                <!-- 1. Live Silver Chart -->
+                <div class="widget">
+                    <div class="widget-title">Live Silver Price (XAG)</div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "OANDA:XAGUSD",
+                                        "width": "100%",
+                                            "height": 220,
+                                                "locale": "en",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(16, 185, 129, 1)",
+                                                                "underLineColor": "rgba(236, 253, 245, 1)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 2. Related Solar ETF -->
+                <div class="widget">
+                    <div class="widget-title">Solar ETF (TAN) Performance</div>
+                    <div class="tradingview-widget-container" style="height: 200px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                                {
+                                    "symbol": "AMEX:TAN",
+                                        "width": "100%",
+                                            "colorTheme": "light",
+                                                "isTransparent": true,
+                                                    "locale": "en"
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 3. Market Pulse -->
+                <div class="widget">
+                    <div class="widget-title">Industrial Metals</div>
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "colorTheme": "light",
+                                        "dateRange": "12M",
+                                            "showChart": false,
+                                                "locale": "en",
+                                                    "width": "100%",
+                                                        "height": "250",
+                                                            "isTransparent": true,
+                                                                "tabs": [{ "title": "Commodities", "symbols": [{ "s": "OANDA:XAGUSD", "d": "Silver" }, { "s": "OANDA:XCUUSD", "d": "Copper" }, { "s": "OANDA:XPTUSD", "d": "Platinum" }] }]
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- Green Energy Newsletter -->
+                <div class="widget"
+                    style="background: linear-gradient(135deg, #064e3b, #10b981); color: white; border:none;">
+                    <div style="font-weight:700; font-size:16px; margin-bottom:8px;">🌿 Green Energy Investing</div>
+                    <p style="font-size:13px; opacity:0.9; margin-bottom:15px; font-family:var(--font-display);">Join
+                        15,000+ subscribers tracking the commodity supercycle.</p>
+                    <input type="email" placeholder="Email address"
+                        style="width: 100%; padding: 10px; border-radius: 6px; border:none; margin-bottom:10px;">
+                    <button
+                        style="width: 100%; padding: 10px; background: white; color: #064e3b; font-weight: 700; border: none; border-radius: 6px; cursor: pointer;">Get
+                        Report</button>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size:14px; color:rgba(255,255,255,0.7)">Real-time precious metals analytics.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="../index.html#dashboard">Dashboard</a>
+                <a href="../index.html#news">News</a>
+                <a href="../about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:humanshuk8@gmail.com">humanshuk8@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 SilverPrice. All rights reserved.</div>
+    </footer>
+
+    <!-- Scroll Script -->
+    <script>
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
