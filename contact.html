@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | SilverPrice</title>
+    <title>Contact Us | SilverPrice</title>
     <meta name="description"
-        content="Learn about SilverPrice - our mission, data sources, and commitment to providing real-time silver market transparency.">
+        content="Contact SilverPrice for inquiries, feedback, or corrections. We aim to respond within 24–48 hours.">
     <meta name="robots" content="index, follow">
 
     <!-- Fonts -->
@@ -18,7 +18,7 @@
 
     <style>
         /* ========================================
-           SHARED THEME (Matches Entire Site)
+           SHARED THEME
            ======================================== */
         :root {
             --brand-primary: #0f172a;
@@ -116,6 +116,7 @@
             max-width: var(--max-width);
             margin: 40px auto;
             padding: 0 24px;
+            min-height: 60vh;
         }
 
         .card {
@@ -131,36 +132,7 @@
             font-size: 32px;
             font-weight: 800;
             color: var(--brand-primary);
-            margin-bottom: 16px;
-        }
-
-        .intro-text {
-            font-size: 18px;
-            color: var(--brand-secondary);
-            margin-bottom: 32px;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 32px;
-        }
-
-        h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--brand-primary);
-            margin-top: 32px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Decorative icon for H2 */
-        h2::before {
-            content: '';
-            display: inline-block;
-            width: 6px;
-            height: 24px;
-            background: var(--brand-accent);
-            border-radius: 4px;
+            margin-bottom: 24px;
         }
 
         p {
@@ -168,40 +140,20 @@
             color: var(--text-muted);
         }
 
-        ul {
-            list-style: none;
-            margin-bottom: 24px;
-        }
-
-        li {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 24px;
-            color: var(--text-muted);
-        }
-
-        li::before {
-            content: "•";
-            color: var(--brand-accent);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 18px;
-            line-height: 1.5;
-        }
-
         .contact-box {
             background: #f8fafc;
             border: 1px dashed var(--border-light);
-            padding: 24px;
+            padding: 32px;
             border-radius: 8px;
             margin-top: 24px;
+            text-align: center;
         }
 
         .email-link {
             font-family: var(--font-mono);
             font-weight: 600;
-            color: var(--brand-primary);
+            color: var(--brand-accent);
+            font-size: 18px;
         }
 
         /* Footer */
@@ -254,46 +206,14 @@
     <!-- Main Content -->
     <div class="container">
         <article class="card">
-            <h1>About Us</h1>
-            <p class="intro-text">Welcome to <strong>SilverPrice</strong> — your trusted source for real-time silver
-                market data, insights, and tools.</p>
+            <h1>Contact Us</h1>
+            <p>We value your feedback and inquiries. Whether you have a question about our data, a suggestion for
+                improvement, or need to report an error, please reach out to us.</p>
 
-            <h1>About SilverPrice</h1>
-            <p>SilverPrice is an independent financial analysis platform focused on precious metals, commodities, and
-                macroeconomic trends. Our goal is to provide accurate, unbiased, and educational market insights for
-                investors and the general public.</p>
-
-            <p>We are not a brokerage, financial advisor, or investment firm. All content is informational only.</p>
-
-            <h2>Our Values</h2>
-            <p>We are committed to:</p>
-            <ul>
-                <li><strong>Accuracy</strong> — displaying data from reliable sources</li>
-                <li><strong>Transparency</strong> — clearly stating our limitations and data origins</li>
-                <li><strong>Accessibility</strong> — keeping information free and easy to access</li>
-                <li><strong>Privacy</strong> — respecting and protecting user privacy</li>
-            </ul>
-
-            <h2>Who Is This Website For?</h2>
-            <p>SilverPrice is built for:</p>
-            <ul>
-                <li>Retail investors tracking precious metals</li>
-                <li>Traders monitoring XAG/USD movements</li>
-                <li>Students researching commodities and markets</li>
-                <li>Journalists and analysts referencing silver price trends</li>
-                <li>Anyone curious about the silver market</li>
-            </ul>
-
-            <h2>Final Notes</h2>
-            <p>SilverPrice is continuously evolving. We are constantly improving our design, performance, and content to
-                serve our users better. Thank you for using SilverPrice.</p>
-
-            <h2>Contact Us</h2>
             <div class="contact-box">
-                <p style="margin-bottom: 0;">We love feedback and questions. If you have any suggestions, corrections,
-                    or inquiries, feel free to contact us:</p>
-                <br>
-                <p>Email: <a href="mailto:humanshuk8@gmail.com" class="email-link">humanshuk8@gmail.com</a></p>
+                <p style="margin-bottom: 8px; font-weight: 600; color: var(--brand-primary);">Email Us At:</p>
+                <a href="mailto:humanshuk8@gmail.com" class="email-link">humanshuk8@gmail.com</a>
+                <p style="margin-top: 16px; font-size: 14px;">We aim to respond within 24–48 hours.</p>
             </div>
         </article>
     </div>
@@ -311,6 +231,7 @@
 
 </body>
 
+<!-- Cookie Banner -->
 <div id="cookie-banner"
     style="position:fixed;bottom:0;left:0;width:100%;background:#0f172a;color:white;padding:14px;text-align:center;z-index:9999;display:none;">
     We use cookies and ads to improve your experience. By continuing, you accept our <a href="/privacy.html"
