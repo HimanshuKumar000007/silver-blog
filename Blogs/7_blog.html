@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Analysis of the Multi Commodity Exchange of India (MCX) 1:5 Stock Split | SilverPrice India</title>
+    <meta name="description"
+        content="A comprehensive analysis of the Multi Commodity Exchange (MCX) stock subdivision, institutional holdings, and market liquidity implications.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Branding - Institutional Finance Theme */
+            --brand-primary: #0f172a;
+            --brand-secondary: #1e293b;
+            --brand-accent: #6366f1;
+            /* Indigo */
+            --brand-light: #e0e7ff;
+            --color-gold: #fbbf24;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 12px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar (Indigo) */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: var(--brand-accent);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Ticker Tape */
+        .ticker-wrap {
+            height: 40px;
+            overflow: hidden;
+            background: var(--brand-primary);
+        }
+
+        /* Header */
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--color-gold);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--brand-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 0 0 1px var(--border-light);
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-text strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.85;
+            color: #334155;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            color: var(--brand-primary);
+            letter-spacing: -0.5px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #4338ca;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #eef2ff;
+            /* Light Indigo */
+            border-left: 4px solid var(--brand-accent);
+            padding: 24px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .highlight-box h4 {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #3730a3;
+            font-weight: 800;
+        }
+
+        .highlight-box li {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #312e81;
+        }
+
+        .highlight-box li::before {
+            content: "•";
+            color: var(--brand-accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* Comparison Table Style */
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-display);
+            margin: 30px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .financial-table th {
+            background: var(--brand-primary);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .financial-table td {
+            padding: 16px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 15px;
+            color: #334155;
+        }
+
+        .financial-table tr:last-child td {
+            border-bottom: none;
+            font-weight: 700;
+            background: #f8fafc;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4em;
+            line-height: 0.85;
+            font-weight: 700;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--brand-accent);
+            font-family: var(--font-display);
+        }
+
+        /* Sidebar */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--brand-accent);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        /* Author Box */
+        .author-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .author-avatar-lg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-family: var(--font-display);
+            margin-bottom: 0;
+        }
+
+        /* Share */
+        .share-sidebar {
+            position: absolute;
+            left: -70px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #64748b;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            background: var(--brand-accent);
+            color: white;
+            border-color: var(--brand-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .financial-table {
+                font-size: 13px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div class="ticker-wrap">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{ "proName": "NSE:MCX", "title": "MCX India" }, { "proName": "NSE:NIFTY", "title": "Nifty 50" }, { "proName": "FX_IDC:USDINR", "title": "USD/INR" }, { "proName": "OANDA:XAGUSD", "title": "Silver" }],
+                            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": false, "displayMode": "adaptive", "locale": "in"
+                    }
+                </script>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Silver<span>Price</span></a>
+            <a href="index.html" class="nav-link"><span>&#8592;</span> Market Dashboard</a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn">𝕏</div>
+                <div class="share-btn">f</div>
+                <div class="share-btn">in</div>
+                <div class="share-btn">🔗</div>
+            </div>
+        </div>
+
+        <main class="article-content">
+            <div class="breadcrumb">India Markets &bull; Corporate Actions</div>
+
+            <h1>Analysis of the Multi Commodity Exchange of India (MCX) 1:5 Stock Split</h1>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=6366f1&color=fff&size=64"
+                    class="author-avatar-sm" alt="Himanshu Kumar">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher &bull; Dec 31, 2025</span>
+                </div>
+            </div>
+
+            <!-- Contextual Hero Image -->
+            <img src="https://res.cloudinary.com/dhb8qmnxt/image/upload/v1767334636/Gemini_Generated_Image_7zyu4t7zyu4t7zyu_myjsmc.png"
+                alt="Indian Stock Market Finance"
+                style="width:100%; margin-bottom: 40px; border-radius: 12px; filter: saturate(0.8);">
+
+            <article class="post-body">
+                <div class="highlight-box">
+                    <h4>Executive Summary</h4>
+                    <ul>
+                        <li><strong>Corporate Action:</strong> 1:5 stock subdivision (new face value ₹2, from ₹10).</li>
+                        <li><strong>Record Date:</strong> Jan 2, 2026 (Last buy date: Jan 1, 2026).</li>
+                        <li><strong>Impact:</strong> Financially neutral; share price divides by 5.</li>
+                        <li><strong>Strategic Goal:</strong> Enhance liquidity and retail accessibility.</li>
+                        <li><strong>Context:</strong> Strong institutional holding (MFs ~37.34%, Kotak ~15%).</li>
+                    </ul>
+                </div>
+
+                <p class="drop-cap"><strong>THIS REPORT</strong> provides a comprehensive analysis of the inaugural
+                    stock subdivision (stock split) announced by the Multi Commodity Exchange of India (MCX). The key
+                    aspects of this corporate action include a 1:5 subdivision, a record date of January 2, 2026, and a
+                    strategic rationale focused on enhancing liquidity and retail accessibility.</p>
+
+                <p>The action has garnered significant market attention due to MCX's substantial institutional ownership
+                    profile, including a mutual fund holding of approximately 37.34% (as of Sep 30, 2025) and a
+                    strategic ~15% stake held by Kotak Mahindra Bank.</p>
+
+                <h2>1. Details of the Corporate Action</h2>
+                <p>The Board of Directors of Multi Commodity Exchange of India (MCX) has approved the company's
+                    first-ever stock subdivision. This corporate action is designed to adjust the company's capital
+                    structure without affecting its underlying value.</p>
+                <ul>
+                    <li><strong>Ratio of Subdivision:</strong> 1:5 (One existing share will become five shares).</li>
+                    <li><strong>Face Value Adjustment:</strong> The face value of each equity share will be reduced from
+                        ₹10 to ₹2.</li>
+                    <li><strong>Record Date:</strong> The company has fixed January 2, 2026, as the record date.
+                        Shareholders who are on the company's register of members as of this date will be eligible for
+                        the split.</li>
+                </ul>
+                <p><strong>Trading and Settlement Timeline:</strong> For an investor to be eligible for the corporate
+                    action, the purchased shares must be settled and credited to their demat account on or before the
+                    record date. Given the standard T+1 settlement cycle in the Indian market, the last trading session
+                    to purchase shares and qualify for the split is <strong>January 1, 2026</strong>. The stock will
+                    begin trading at its new, adjusted price on the ex-split date.</p>
+
+                <h2>2. The Mechanics of the Split: A Non-Dilutive Corporate Action</h2>
+                <p>A stock split is a mechanical adjustment to the number of shares outstanding and does not, in itself,
+                    create or destroy shareholder value. It is a non-dilutive event, meaning it does not alter an
+                    investor's proportional ownership in the company. The total market capitalization remains unchanged
+                    at the moment of execution.</p>
+                <p>The financial impact can be illustrated as follows:</p>
+
+                <table class="financial-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Pre-Split</th>
+                            <th>Post-Split (1:5)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Shares Held</td>
+                            <td>10</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Share Price (Illustrative)</td>
+                            <td>₹11,000</td>
+                            <td>₹2,200</td>
+                        </tr>
+                        <tr>
+                            <td>Total Investment Value</td>
+                            <td>₹1,10,000</td>
+                            <td>₹1,10,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>As demonstrated, an investor's total investment value remains constant. The five-fold increase in the
+                    number of shares held is perfectly offset by a five-fold decrease in the nominal price per share.
+                </p>
+
+                <h2>3. Rationale for the Stock Subdivision</h2>
+                <p>The decision to execute a stock split is typically driven by market-structure considerations rather
+                    than by changes in the company's fundamental business operations. The primary motivations for MCX's
+                    action align with standard corporate finance theory.</p>
+
+                <h3>A. Enhancing Retail Accessibility</h3>
+                <p>After a significant and prolonged rally that saw MCX's share price surpass the ₹10,000 level, the
+                    stock's high nominal price became a potential psychological and financial barrier for retail
+                    investors. By reducing the per-share price to a more accessible level (e.g., ~₹2,200), the company
+                    aims to lower the "ticket size" required to purchase a single share, thereby encouraging broader
+                    retail participation.</p>
+
+                <h3>B. Improving Market Liquidity</h3>
+                <p>A lower per-share price can lead to an increase in trading volumes as more market participants are
+                    able to transact in the stock. This has the potential to improve liquidity, which can lead to
+                    tighter bid-ask spreads and more efficient price discovery over the long term. While an increase in
+                    liquidity is a potential outcome, it is not guaranteed and remains subject to market sentiment and
+                    the company's fundamental performance.</p>
+
+                <h3>C. Signaling Corporate Confidence</h3>
+                <p>An inaugural stock split, particularly after a period of strong performance, is often interpreted by
+                    the market as a signal of management's confidence in the company's future prospects and its comfort
+                    with a larger, more diverse investor base.</p>
+
+                <h2>4. Shareholder Profile and Market Context</h2>
+                <p>A notable aspect of MCX that adds to the significance of this stock split is its substantial
+                    institutional ownership. This indicates a high degree of confidence from sophisticated financial
+                    institutions.</p>
+                <ul>
+                    <li><strong>Dominant Mutual Fund Holding:</strong> As of the quarter ending September 30, 2025,
+                        mutual funds collectively held 19,041,274 shares, representing approximately 37.34% of the
+                        company's total equity. This significant holding underscores the institutional conviction in
+                        MCX's business model and growth prospects.</li>
+                    <li><strong>Strategic Stake by Kotak Mahindra Bank:</strong> Furthermore, Kotak Mahindra Bank holds
+                        a strategic stake of approximately 15% in MCX. This long-term holding has become exceptionally
+                        valuable following the stock's multi-year rally and is frequently cited in market analysis as a
+                        key feature of MCX's ownership structure.</li>
+                </ul>
+                <p>This high institutional concentration means that decisions made by these large holders can
+                    significantly influence market liquidity, free-float dynamics, and sentiment surrounding corporate
+                    actions like this stock split. The split is also seen as a move to balance this institutional
+                    dominance by encouraging a wider retail shareholder base.</p>
+
+                <h2>5. Post-Split Price Dynamics and Investment Thesis</h2>
+                <p>It is critical for investors to understand the distinction between the mechanical price adjustment
+                    and subsequent market-driven price discovery.</p>
+                <p><strong>The Arithmetic Adjustment:</strong> Immediately following the split, the reference share
+                    price will be arithmetically adjusted downwards by a factor of five. If the pre-split price is
+                    ₹11,000, the post-split price will be ₹2,200. This is a neutral adjustment, not a fundamental
+                    decline in the company's value, and should not be misinterpreted as a price "crash."</p>
+                <p><strong>Continued Price Discovery:</strong> However, the neutral nature of the split does not
+                    preclude subsequent price volatility. Post-split price discovery will be influenced by several
+                    factors, including changes in market sentiment, the behavior of new retail investors attracted by
+                    the lower price, and broader macroeconomic conditions.</p>
+                <p>The long-term investment case for MCX remains contingent on its fundamental business performance, not
+                    on the mechanics of its stock price. Key drivers for valuation include:</p>
+                <ul>
+                    <li>Growth in trading volumes on its commodity exchange.</li>
+                    <li>The regulatory environment and the company's ability to innovate with new products.</li>
+                    <li>Its competitive positioning within the financial market infrastructure space.</li>
+                    <li>Its profitability, operating leverage, and the market's confidence in its long-term strategy.
+                    </li>
+                </ul>
+
+                <h2>6. Conclusion</h2>
+                <p>The inaugural 1:5 stock subdivision by MCX, with a record date of January 2, 2026, is a strategic
+                    corporate action aimed at enhancing market liquidity and improving retail investor accessibility.
+                    The action is financially neutral, proportionally increasing the number of shares while decreasing
+                    the per-share price, leaving the total market capitalization unchanged.</p>
+                <p>The move has attracted significant attention, partly due to the stock's high nominal price following
+                    a sustained rally and its strong institutional ownership, which includes a ~37.34% holding by mutual
+                    funds and a ~15% strategic stake by Kotak Mahindra Bank.</p>
+                <p>For investors, it is essential to view this split as a change in the form of their holding, not its
+                    substance. The long-term value of an investment in MCX will continue to be determined by the
+                    company's fundamental business performance, its competitive advantages, and its ability to generate
+                    sustainable profits.</p>
+
+                <p style="font-size:14px; color:#64748b; margin-top:40px; font-style:italic;">Disclaimer: This analysis
+                    is for informational and educational purposes only and does not constitute financial or investment
+                    advice. All investment decisions should be made in consultation with a qualified financial advisor.
+                </p>
+            </article>
+
+            <!-- Author Box -->
+            <div class="author-box">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=6366f1&color=fff&size=128"
+                    class="author-avatar-lg" alt="Himanshu Kumar">
+                <div class="author-info">
+                    <h4>About Himanshu Kumar</h4>
+                    <p>Himanshu is an Independent Market Researcher specializing in Indian market infrastructure and
+                        corporate actions. He analyzes the intersection of financial policy and equity derivatives.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar Widgets -->
+        <aside>
+            <div class="sticky-wrapper">
+
+                <!-- 1. MCX Live Chart -->
+                <div class="widget">
+                    <div class="widget-title">MCX Stock Performance (NSE)</div>
+                    <div class="tradingview-widget-container" style="height: 250px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "NSE:MCX",
+                                        "width": "100%",
+                                            "height": 250,
+                                                "locale": "in",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(99, 102, 241, 1)",
+                                                                "underLineColor": "rgba(224, 231, 255, 1)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 2. Benchmark Nifty 50 -->
+                <div class="widget">
+                    <div class="widget-title">Benchmark: Nifty 50</div>
+                    <div class="tradingview-widget-container" style="height: 200px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "NSE:NIFTY",
+                                        "width": "100%",
+                                            "height": 200,
+                                                "locale": "in",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "isTransparent": true,
+                                                                "autosize": false
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 3. Key Commodities -->
+                <div class="widget">
+                    <div class="widget-title">Commodities Traded on MCX</div>
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "colorTheme": "light",
+                                        "dateRange": "12M",
+                                            "showChart": false,
+                                                "locale": "in",
+                                                    "width": "100%",
+                                                        "height": "250",
+                                                            "largeChartUrl": "",
+                                                                "isTransparent": true,
+                                                                    "tabs": [{ "title": "Commodities", "symbols": [{ "s": "MCX:GOLD1!" }, { "s": "MCX:SILVER1!" }, { "s": "MCX:CRUDEOIL1!" }] }]
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="widget"
+                    style="background: linear-gradient(135deg, #1e293b, #4338ca); color: white; border:none; text-align: center;">
+                    <div style="font-weight:700; font-size:18px; margin-bottom:10px;">🇮🇳 Indian Markets Intel</div>
+                    <p style="font-size:13px; opacity:0.8; margin-bottom:20px; line-height: 1.5;">Get analysis on stock
+                        splits, dividends, and corporate actions directly to your inbox.</p>
+                    <button
+                        style="width: 100%; padding: 12px; background: white; color: #4338ca; font-weight: 700; border: none; border-radius: 6px; cursor: pointer;">Subscribe
+                        Free</button>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="adsense-slot"
+        style="width:100%;min-height:250px;background:#f1f5f9;border:1px dashed #cbd5e1;display:flex;align-items:center;justify-content:center;color:#64748b;max-width: 1200px; margin: 0 auto;">
+        Advertisement
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size:14px; color:rgba(255,255,255,0.7)">Real-time precious metals analytics.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="../index.html#dashboard">Dashboard</a>
+                <a href="../index.html#news">News</a>
+                <a href="../about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:humanshuk8@gmail.com">humanshuk8@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 SilverPrice. All rights reserved.</div>
+    </footer>
+
+    <!-- Scroll Script -->
+    <script>
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+    </script>
+
+    <div id="cookie-banner"
+        style="position:fixed;bottom:0;left:0;width:100%;background:#0f172a;color:white;padding:14px;text-align:center;z-index:9999;display:none;">
+        We use cookies and ads to improve your experience. By continuing, you accept our <a href="/privacy.html"
+            style="color:#fbbf24;">Privacy Policy</a>.
+        <button onclick="acceptCookies()"
+            style="margin-left:10px;padding:6px 12px;border:none;background:#fbbf24;color:black;border-radius:4px;">Accept</button>
+    </div>
+
+    <script>
+        if (!localStorage.getItem("cookiesAccepted")) {
+            document.getElementById("cookie-banner").style.display = "block";
+        }
+        function acceptCookies() {
+            localStorage.setItem("cookiesAccepted", "yes");
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
