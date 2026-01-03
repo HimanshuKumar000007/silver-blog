@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Global Market Alert: U.S.-Venezuela Conflict & Safe Havens | SilverPrice News</title>
+    <meta name="description"
+        content="Analysis of the global market reaction to U.S. strikes on Venezuela: Gold/Silver surge, Oil volatility, and equity sell-off.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC9JDN566T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KC9JDN566T');
+    </script>
+
+    <style>
+        :root {
+            /* Branding - Crisis Theme */
+            --brand-primary: #0f172a;
+            --brand-secondary: #1e293b;
+            --brand-alert: #dc2626;
+            /* Strong Red */
+            --brand-warn: #fff1f2;
+            --color-gold: #fbbf24;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 12px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar (Alert Red) */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: var(--brand-alert);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Ticker Tape */
+        .ticker-wrap {
+            height: 40px;
+            overflow: hidden;
+            background: var(--brand-primary);
+        }
+
+        /* Header */
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--color-gold);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-alert);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .breadcrumb::before {
+            content: "●";
+            animation: blink 1.5s infinite;
+            color: var(--brand-alert);
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--brand-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-family: var(--font-body);
+            font-style: italic;
+            border-left: 3px solid var(--brand-alert);
+            padding-left: 16px;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.85;
+            color: #334155;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            color: var(--brand-primary);
+            letter-spacing: -0.5px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #7f1d1d;
+        }
+
+        /* Highlight Box - Crisis */
+        .highlight-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--brand-alert);
+            padding: 24px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .highlight-box h4 {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #991b1b;
+            font-weight: 800;
+        }
+
+        .highlight-box li {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #7f1d1d;
+        }
+
+        .highlight-box li::before {
+            content: "!";
+            color: var(--brand-alert);
+            position: absolute;
+            left: 0;
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        /* Impact Table Style */
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-display);
+            margin: 30px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .financial-table th {
+            background: var(--brand-primary);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .financial-table td {
+            padding: 16px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 15px;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .trend-up {
+            color: #16a34a;
+            font-weight: 700;
+        }
+
+        .trend-down {
+            color: #dc2626;
+            font-weight: 700;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4em;
+            line-height: 0.85;
+            font-weight: 700;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--brand-alert);
+            font-family: var(--font-display);
+        }
+
+        /* Meta Header */
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Sidebar */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--brand-alert);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        /* Share */
+        .share-sidebar {
+            position: absolute;
+            left: -70px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #64748b;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            background: var(--brand-alert);
+            color: white;
+            border-color: var(--brand-alert);
+            transform: translateY(-2px);
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .financial-table {
+                font-size: 13px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div class="ticker-wrap">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{ "proName": "OANDA:XAGUSD", "title": "Silver" }, { "proName": "TVC:UKOIL", "title": "Brent Oil" }, { "proName": "OANDA:XAUUSD", "title": "Gold" }, { "proName": "TVC:VIX", "title": "Volatility" }],
+                            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": false, "displayMode": "adaptive", "locale": "en"
+                    }
+                </script>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Silver<span>Price</span></a>
+            <a href="index.html" class="nav-link"><span>&#8592;</span> Market Dashboard</a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn">𝕏</div>
+                <div class="share-btn">f</div>
+                <div class="share-btn">in</div>
+                <div class="share-btn">✉</div>
+            </div>
+        </div>
+
+        <main class="article-content">
+            <div class="breadcrumb">Geopolitics &bull; Market Alert</div>
+
+            <h1>U.S. Attack on Venezuela Sends Shockwaves Through Global Markets: Gold and Silver Rise, Oil Turns
+                Volatile, Stocks Slip</h1>
+
+            <p class="subtitle">Geopolitical escalation drives investors toward safe havens while energy markets price
+                in risk premium</p>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=ef4444&color=fff&size=64"
+                    class="author-avatar-sm" alt="Himanshu Kumar">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher &bull; Jan 03, 2026</span>
+                </div>
+            </div>
+
+            <!-- Contextual Hero Image -->
+            <img src="https://images.unsplash.com/photo-1627471900388-c70034423403?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Oil Market Graph Red"
+                style="width:100%; margin-bottom: 40px; border-radius: 12px; filter: grayscale(20%) contrast(1.1);">
+
+            <article class="post-body">
+                <h2>Global Markets React as U.S.–Venezuela Conflict Escalates</h2>
+                <p>Global financial markets turned volatile after reports confirmed a U.S. military strike on Venezuela,
+                    raising fears of broader geopolitical instability and potential disruptions to energy supplies.</p>
+
+                <p>The development immediately triggered a risk-off reaction across asset classes, with investors moving
+                    money into safe-haven assets such as gold and silver, while equities weakened and crude oil prices
+                    turned volatile.</p>
+
+                <p>Analysts say the event adds a new geopolitical risk premium into already fragile global markets at a
+                    time when inflation remains sticky and central banks are cautiously navigating interest-rate cuts.
+                </p>
+
+                <h2>Gold and Silver Rally on Safe-Haven Demand</h2>
+                <p>Precious metals surged following the news as investors sought protection from geopolitical
+                    uncertainty.</p>
+
+                <p>Market experts note that gold and silver traditionally benefit during wars, conflicts, and
+                    geopolitical crises because they act as stores of value when confidence in financial systems
+                    weakens.</p>
+
+                <p>Reports indicate that silver could move toward the $78 per ounce level, while gold continues to
+                    strengthen as global investors hedge against risk and currency volatility.</p>
+
+                <div class="highlight-box">
+                    <h4>Why metals are rising</h4>
+                    <ul>
+                        <li>Geopolitical shocks increase fear and uncertainty.</li>
+                        <li>Investors reduce exposure to equities and move into hard assets.</li>
+                        <li>Central bank rate-cut expectations also support precious metals by lowering the opportunity
+                            cost of holding them.</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Market impact:</h4>
+                    <ul>
+                        <li><strong>Gold:</strong> Rising steadily as a crisis hedge.</li>
+                        <li><strong>Silver:</strong> Rising faster due to both safe-haven demand and strong industrial
+                            usage.</li>
+                    </ul>
+                </div>
+
+                <h2>Crude Oil Turns Volatile as Risk Premium Builds</h2>
+                <p>Crude oil prices reacted with sharp intraday swings as traders priced in geopolitical risk, although
+                    analysts caution that Venezuela’s actual oil supply impact may be limited in the near term.</p>
+
+                <p>Venezuela’s oil exports were already constrained by sanctions and infrastructure issues, meaning the
+                    conflict adds a risk premium rather than causing an immediate supply shock.</p>
+
+                <p>Analysts say oil prices may rise on headlines but could stabilize if exports continue without
+                    disruption.</p>
+
+                <div class="highlight-box">
+                    <h4>What’s driving oil markets</h4>
+                    <ul>
+                        <li>Fear of escalation in Latin America.</li>
+                        <li>Potential for U.S. sanctions or retaliatory actions.</li>
+                        <li>Sensitivity of energy markets to any geopolitical conflict near oil-producing regions.</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Net effect:</h4>
+                    <ul>
+                        <li>Oil prices likely remain volatile, reacting strongly to further developments or diplomatic
+                            signals.</li>
+                    </ul>
+                </div>
+
+                <h2>Stock Markets Slide as Investors Shift to Safety</h2>
+                <p>Equity markets across the world weakened as investors reduced exposure to risk assets.</p>
+
+                <div class="highlight-box">
+                    <h4>Geopolitical shocks typically cause:</h4>
+                    <ul>
+                        <li>Selling pressure in stocks</li>
+                        <li>Rising volatility (VIX increases)</li>
+                        <li>Capital rotation into bonds and precious metals</li>
+                    </ul>
+                </div>
+
+                <p>Sectors such as energy and defense may outperform in this environment, while technology and growth
+                    stocks often face selling pressure as investors move toward safer or more defensive positions.</p>
+
+                <h2>Currency and Bond Markets Also Affected</h2>
+                <p>Beyond stocks and commodities, the geopolitical escalation is also influencing global currency and
+                    bond markets, as investors seek safety and reduce exposure to riskier assets.</p>
+
+                <h3>Currencies</h3>
+                <p>In periods of geopolitical conflict and heightened uncertainty, investors typically move toward
+                    safe-haven currencies, which are considered more stable and liquid.</p>
+                <ul>
+                    <li>The U.S. dollar (USD) tends to strengthen as global investors seek liquidity and safety in the
+                        world’s reserve currency.</li>
+                    <li>The Japanese yen (JPY) often rises because Japan holds large foreign assets, and investors
+                        repatriate funds during global stress.</li>
+                    <li>The Swiss franc (CHF) gains due to Switzerland’s political neutrality, strong financial system,
+                        and low inflation.</li>
+                </ul>
+                <p>At the same time, emerging market currencies usually weaken as investors pull capital out of
+                    higher-risk regions and move funds into safer developed markets. Countries that rely heavily on
+                    foreign investment or commodity imports are particularly vulnerable to currency pressure during such
+                    periods.</p>
+
+                <h3>Bonds</h3>
+                <p>Government bonds, especially those issued by highly stable governments, typically benefit from
+                    increased demand during crises.</p>
+                <ul>
+                    <li>U.S. Treasuries attract strong inflows because they are considered one of the safest and most
+                        liquid assets in the world.</li>
+                    <li>As demand for government bonds rises, their prices increase — and because bond prices and yields
+                        move inversely, bond yields fall.</li>
+                </ul>
+                <p>Lower yields reflect the market’s preference for safety over return, even if that means accepting
+                    lower interest income. This shift often signals rising risk aversion and expectations of slower
+                    economic growth.</p>
+
+                <h2>Summary of Market Impact</h2>
+                <table class="financial-table">
+                    <thead>
+                        <tr>
+                            <th>Asset Class</th>
+                            <th>Direction</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gold</td>
+                            <td class="trend-up">↑ Rising</td>
+                            <td>Safe-haven demand</td>
+                        </tr>
+                        <tr>
+                            <td>Silver</td>
+                            <td class="trend-up">↑ Strong rise</td>
+                            <td>Hedge + industrial demand</td>
+                        </tr>
+                        <tr>
+                            <td>Crude Oil</td>
+                            <td class="trend-up">Volatile / Slightly ↑</td>
+                            <td>Geopolitical risk premium</td>
+                        </tr>
+                        <tr>
+                            <td>Stocks</td>
+                            <td class="trend-down">↓ Weak</td>
+                            <td>Risk-off sentiment</td>
+                        </tr>
+                        <tr>
+                            <td>USD, JPY</td>
+                            <td class="trend-up">↑ Stronger</td>
+                            <td>Flight to safety</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>What This Means for Investors</h2>
+                <p>The U.S.–Venezuela conflict reinforces the idea that geopolitics is now a core market driver, not a
+                    side factor.</p>
+
+                <p>Investors should prepare for:</p>
+                <ul>
+                    <li>Higher volatility</li>
+                    <li>Sudden price swings based on political headlines</li>
+                    <li>Increased importance of diversification into commodities and defensive assets</li>
+                </ul>
+
+                <p>If tensions escalate further, precious metals could continue rising, oil could break higher, and
+                    equity markets could remain under pressure. If the situation stabilizes diplomatically, markets may
+                    gradually normalize — but the risk premium is likely to stay elevated in the near term.</p>
+
+                <h2>Bottom Line</h2>
+                <p>The U.S. attack on Venezuela has introduced fresh uncertainty into global markets, strengthening gold
+                    and silver, making oil volatile, and pushing investors away from stocks.</p>
+
+                <p>Markets are not only reacting to economic data anymore — they are now reacting to geopolitics in real
+                    time. Until clarity emerges, volatility and defensive positioning are likely to dominate global
+                    financial trends.</p>
+
+                <p class="subtitle" style="font-size: 14px; margin-top: 30px;">Disclaimer: This article is for
+                    informational purposes only and does not constitute investment advice.</p>
+
+            </article>
+        </main>
+
+        <!-- Sidebar Widgets -->
+        <aside>
+            <div class="sticky-wrapper">
+
+                <!-- 1. Oil Prices -->
+                <div class="widget">
+                    <div class="widget-title">Crude Oil (Brent) <span>🛢️</span></div>
+                    <div class="tradingview-widget-container" style="height: 250px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "TVC:UKOIL",
+                                        "width": "100%",
+                                            "height": 250,
+                                                "locale": "en",
+                                                    "dateRange": "1M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(0, 0, 0, 1)",
+                                                                "underLineColor": "rgba(224, 224, 224, 1)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 2. Volatility (VIX) -->
+                <div class="widget">
+                    <div class="widget-title">Volatility Index (VIX) <span>⚠️</span></div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                                {
+                                    "symbol": "TVC:VIX",
+                                        "width": "100%",
+                                            "colorTheme": "light",
+                                                "isTransparent": true,
+                                                    "locale": "en"
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 3. Safe Havens -->
+                <div class="widget">
+                    <div class="widget-title">Safe Havens</div>
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "colorTheme": "light",
+                                        "dateRange": "12M",
+                                            "showChart": false,
+                                                "locale": "en",
+                                                    "width": "100%",
+                                                        "height": "250",
+                                                            "largeChartUrl": "",
+                                                                "isTransparent": true,
+                                                                    "tabs": [{ "title": "Assets", "symbols": [{ "s": "OANDA:XAUUSD", "d": "Gold" }, { "s": "FX:USDCHF", "d": "USD/CHF" }, { "s": "TVC:US10Y", "d": "10Y Bond" }] }]
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="widget"
+                    style="background: linear-gradient(135deg, #7f1d1d, #0f172a); color: white; border:none; text-align: center;">
+                    <div style="font-weight:700; font-size:18px; margin-bottom:10px;">🚨 Geopolitics Brief</div>
+                    <p style="font-size:13px; opacity:0.8; margin-bottom:20px;">Get real-time alerts on conflicts
+                        affecting commodity prices.</p>
+                    <button
+                        style="width: 100%; padding: 12px; background: white; color: #7f1d1d; font-weight: 700; border: none; border-radius: 6px; cursor: pointer;">Subscribe
+                        for Alerts</button>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="adsense-slot"
+        style="width:100%;min-height:250px;background:#f1f5f9;border:1px dashed #cbd5e1;display:flex;align-items:center;justify-content:center;color:#64748b;max-width: 1200px; margin: 0 auto;">
+        Advertisement
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size:14px; color:rgba(255,255,255,0.7)">Real-time precious metals analytics.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="../index.html#dashboard">Dashboard</a>
+                <a href="../index.html#news">News</a>
+                <a href="../about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:humanshuk8@gmail.com">humanshuk8@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 SilverPrice. All rights reserved.</div>
+    </footer>
+
+    <!-- Scroll Script -->
+    <script>
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
