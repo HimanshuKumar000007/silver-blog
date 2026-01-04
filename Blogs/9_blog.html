@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Global Market Alert: U.S. Captures Venezuela’s Maduro | SilverPrice News</title>
+    <meta name="description"
+        content="Analysis of the global market reaction to U.S. capture of Venezuela's President Maduro: Gold/Silver surge, Oil volatility, and diplomatic turmoil.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC9JDN566T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KC9JDN566T');
+    </script>
+
+    <style>
+        :root {
+            /* Branding - Crisis Theme */
+            --brand-primary: #0f172a;
+            --brand-secondary: #1e293b;
+            --brand-alert: #dc2626;
+            /* Strong Red */
+            --brand-warn: #fff1f2;
+            --color-gold: #fbbf24;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 12px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar (Alert Red) */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: var(--brand-alert);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Ticker Tape */
+        .ticker-wrap {
+            height: 50px;
+            overflow: hidden;
+            background: var(--brand-primary);
+        }
+
+        /* Header */
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--color-gold);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-alert);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .breadcrumb::before {
+            content: "●";
+            animation: blink 1.5s infinite;
+            color: var(--brand-alert);
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--brand-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-family: var(--font-body);
+            font-style: italic;
+            border-left: 3px solid var(--brand-alert);
+            padding-left: 16px;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.85;
+            color: #334155;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            color: var(--brand-primary);
+            letter-spacing: -0.5px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #7f1d1d;
+        }
+
+        /* Highlight Box - Crisis */
+        .highlight-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--brand-alert);
+            padding: 24px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .highlight-box h4 {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #991b1b;
+            font-weight: 800;
+        }
+
+        .highlight-box li {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #7f1d1d;
+        }
+
+        .highlight-box li::before {
+            content: "!";
+            color: var(--brand-alert);
+            position: absolute;
+            left: 0;
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        /* Impact Table Style */
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-display);
+            margin: 30px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .financial-table th {
+            background: var(--brand-primary);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .financial-table td {
+            padding: 16px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 15px;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .trend-up {
+            color: #16a34a;
+            font-weight: 700;
+        }
+
+        .trend-down {
+            color: #dc2626;
+            font-weight: 700;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4em;
+            line-height: 0.85;
+            font-weight: 700;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--brand-alert);
+            font-family: var(--font-display);
+        }
+
+        /* Meta Header */
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Sidebar */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--brand-alert);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        /* Share */
+        .share-sidebar {
+            position: absolute;
+            left: -70px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #64748b;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            background: var(--brand-alert);
+            color: white;
+            border-color: var(--brand-alert);
+            transform: translateY(-2px);
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .financial-table {
+                font-size: 13px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div class="ticker-wrap">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{ "proName": "OANDA:XAGUSD", "title": "Silver" }, { "proName": "TVC:UKOIL", "title": "Brent Oil" }, { "proName": "OANDA:XAUUSD", "title": "Gold" }, { "proName": "TVC:VIX", "title": "Volatility" }],
+                            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": false, "displayMode": "adaptive", "locale": "en"
+                    }
+                </script>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="/index.html" class="logo">Silver<span>Price</span></a>
+            <a href="/index.html" class="nav-link"><span>&#8592;</span> Market Dashboard</a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn">𝕏</div>
+                <div class="share-btn">f</div>
+                <div class="share-btn">in</div>
+                <div class="share-btn">✉</div>
+            </div>
+        </div>
+
+        <main class="article-content">
+            <div class="breadcrumb">Geopolitics &bull; Market Alert</div>
+
+            <h1>U.S. Captures Venezuela’s President Maduro, Announces Temporary Rule — Markets and Diplomacy in Turmoil
+            </h1>
+
+            <p class="subtitle">Global markets react to historic intervention associated with crude oil volatility and
+                safe-haven demand</p>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=ef4444&color=fff&size=64"
+                    class="author-avatar-sm" alt="Himanshu Kumar">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher &bull; Jan 03, 2026</span>
+                </div>
+            </div>
+
+            <!-- Contextual Hero Image -->
+            <img src="us_venezuela_conflict.png" alt="US-Venezuela Conflict"
+                style="width:100%; margin-bottom: 40px; border-radius: 12px; filter: grayscale(20%) contrast(1.1);">
+
+            <article class="post-body">
+                <p>In a geopolitical development of historic proportions, United States military forces have reportedly
+                    captured Venezuelan President Nicolás Maduro in a coordinated operation within Venezuela and
+                    subsequently transferred him to U.S. custody. The action was confirmed in a statement by U.S.
+                    President Donald Trump, who declared that the United States would establish a temporary
+                    administrative authority to "temporarily run Venezuela" with the stated goal of securing a
+                    transition of power. This unprecedented declaration has sent profound shockwaves across
+                    international diplomatic circles, financial markets, and the global political order.</p>
+
+                <p>The operation represents one of the most significant and overt U.S. military interventions in Latin
+                    America in the modern era and marks a dramatic escalation of Washington's protracted political and
+                    economic standoff with the Maduro government. The forcible removal of a sitting, albeit contested,
+                    head of state by a foreign power has precipitated an immediate and intense international debate
+                    concerning the principles of national sovereignty, international law, and regional stability. In
+                    response, world leaders have convened emergency security and diplomatic meetings, with a cascade of
+                    strong reactions emerging from key global and regional powers within hours of the initial reports.
+                </p>
+
+                <h2>Widespread Global Political and Diplomatic Fallout</h2>
+                <p>The international political reaction has been swift, sharp, and largely condemnatory. Major global
+                    and regional powers have voiced significant opposition to the U.S. action.</p>
+
+                <div class="highlight-box">
+                    <h4>Key Reactions:</h4>
+                    <ul>
+                        <li><strong>Latin American Condemnation:</strong> A significant number of Latin American
+                            governments, including regional powerhouses such as Brazil, have strongly condemned the
+                            intervention as a flagrant violation of national sovereignty and a dangerous precedent for
+                            the region. Brazil's foreign ministry described the move as having crossed an "unacceptable
+                            line" in inter-American relations.</li>
+                        <li><strong>Reaction from Major Powers:</strong> The People's Republic of China and the Russian
+                            Federation, both significant economic and political allies of the Maduro government, issued
+                            sharp warnings against U.S. unilateralism and interference in the internal affairs of a
+                            sovereign state.</li>
+                        <li><strong>United Nations Review:</strong> The Secretary-General of the United Nations
+                            announced that the Security Council would convene to review the legality and broader
+                            implications of the intervention under international law. This signals a formal shift in the
+                            crisis from a bilateral military conflict to a multilateral diplomatic and legal
+                            confrontation.</li>
+                    </ul>
+                </div>
+
+                <h2>Immediate Market Impact and Investor Reaction</h2>
+                <p>Global financial markets reacted immediately and forcefully to the heightened geopolitical
+                    uncertainty. The development triggered a classic "risk-off" cascade across all asset classes as
+                    investors moved to hedge against unpredictable outcomes.</p>
+
+                <h3>Flight to Safe-Haven Assets</h3>
+                <p>Gold and silver prices surged as capital flowed into traditional safe-haven assets. This flight to
+                    quality reflects a deep-seated investor fear of systemic instability and a search for tangible
+                    stores of value outside of traditional financial instruments.</p>
+
+                <h3>Volatility in Energy Markets</h3>
+                <p>Crude oil prices became highly volatile. While Venezuela's production is constrained, it holds the
+                    world's largest proven oil reserves. The direct U.S. involvement and the potential for a
+                    U.S.-administered revival of its energy sector introduce a highly uncertain, long-term variable into
+                    global supply-demand equations. In the short term, the market is pricing in a significant
+                    geopolitical risk premium related to potential regional escalation.</p>
+
+                <h3>Decline in Global Equities</h3>
+                <p>Global stock markets weakened as risk appetite evaporated. The increase in geopolitical uncertainty
+                    has prompted a sell-off in risk assets, particularly in sectors sensitive to global trade and
+                    economic stability.</p>
+
+                <p>Market analysts have noted that this event injects a substantial and durable geopolitical risk
+                    premium into already fragile global markets, which are contending with persistent inflation and an
+                    uncertain path for central bank policy. Volatility is expected to remain elevated across currency,
+                    fixed-income, and equity markets.</p>
+
+                <h2>Strategic Implications and Future Outlook</h2>
+                <p>The long-term consequences of this intervention are profound and will likely reshape the geopolitical
+                    and economic landscape of the Western Hemisphere and beyond. With the United States now signaling
+                    its intent to directly influence the stabilization and potential revival of Venezuela's vast energy
+                    sector, the future trajectory of global energy markets, regional political alliances, and
+                    international trade flows has become a matter of intense speculation.</p>
+
+                <p>The critical variable in the coming days and weeks will be the international response and the
+                    potential for military or diplomatic escalation. Whether the situation is contained and moves
+                    towards a U.S.-led stabilization or escalates into a broader regional or international conflict will
+                    determine not only the future of Venezuela but also the direction of global markets and geopolitics
+                    for the foreseeable future.</p>
+
+                <p class="subtitle" style="font-size: 14px; margin-top: 30px;">Disclaimer: This article is a speculative
+                    analysis based on a hypothetical news event and is for informational purposes only. It does not
+                    constitute financial or investment advice.</p>
+
+            </article>
+        </main>
+
+        <!-- Sidebar Widgets -->
+        <aside>
+            <div class="sticky-wrapper">
+
+                <!-- 1. Oil Prices -->
+                <div class="widget">
+                    <div class="widget-title">Crude Oil (Brent) <span>🛢️</span></div>
+                    <div class="tradingview-widget-container" style="height: 250px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "TVC:UKOIL",
+                                        "width": "100%",
+                                            "height": 250,
+                                                "locale": "en",
+                                                    "dateRange": "1M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(0, 0, 0, 1)",
+                                                                "underLineColor": "rgba(224, 224, 224, 1)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 2. Volatility (VIX) -->
+                <div class="widget">
+                    <div class="widget-title">Volatility Index (VIX) <span>⚠️</span></div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                                {
+                                    "symbol": "TVC:VIX",
+                                        "width": "100%",
+                                            "colorTheme": "light",
+                                                "isTransparent": true,
+                                                    "locale": "en"
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 3. Safe Havens -->
+                <div class="widget">
+                    <div class="widget-title">Safe Havens</div>
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "colorTheme": "light",
+                                        "dateRange": "12M",
+                                            "showChart": false,
+                                                "locale": "en",
+                                                    "width": "100%",
+                                                        "height": "250",
+                                                            "largeChartUrl": "",
+                                                                "isTransparent": true,
+                                                                    "tabs": [{ "title": "Assets", "symbols": [{ "s": "OANDA:XAUUSD", "d": "Gold" }, { "s": "FX:USDCHF", "d": "USD/CHF" }, { "s": "TVC:US10Y", "d": "10Y Bond" }] }]
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="widget"
+                    style="background: linear-gradient(135deg, #7f1d1d, #0f172a); color: white; border:none; text-align: center;">
+                    <div style="font-weight:700; font-size:18px; margin-bottom:10px;">🚨 Geopolitics Brief</div>
+                    <p style="font-size:13px; opacity:0.8; margin-bottom:20px;">Get real-time alerts on conflicts
+                        affecting commodity prices.</p>
+                    <button
+                        style="width: 100%; padding: 12px; background: white; color: #7f1d1d; font-weight: 700; border: none; border-radius: 6px; cursor: pointer;">Subscribe
+                        for Alerts</button>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="adsense-slot"
+        style="width:100%;min-height:250px;background:#f1f5f9;border:1px dashed #cbd5e1;display:flex;align-items:center;justify-content:center;color:#64748b;max-width: 1200px; margin: 0 auto;">
+        Advertisement
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size:14px; color:rgba(255,255,255,0.7)">Real-time precious metals analytics.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="../index.html#dashboard">Dashboard</a>
+                <a href="../index.html#news">News</a>
+                <a href="../about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:humanshuk8@gmail.com">humanshuk8@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 SilverPrice. All rights reserved.</div>
+    </footer>
+
+    <!-- Scroll Script -->
+    <script>
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
