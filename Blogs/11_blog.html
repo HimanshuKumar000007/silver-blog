@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>U.S. Energy Sector Surges on Speculation of Renewed Access to Venezuelan Reserves | SilverPrice News</title>
+    <meta name="description"
+        content="Market analysis of U.S. energy sector rally driven by speculation of renewed access to Venezuelan oil reserves. Chevron, ExxonMobil, and ConocoPhillips in focus.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC9JDN566T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KC9JDN566T');
+    </script>
+
+    <style>
+        :root {
+            /* Branding - Crisis Theme */
+            --brand-primary: #0f172a;
+            --brand-secondary: #1e293b;
+            --brand-alert: #dc2626;
+            /* Strong Red */
+            --brand-warn: #fff1f2;
+            --color-gold: #fbbf24;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 12px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar (Alert Red) */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: var(--brand-alert);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Ticker Tape */
+        .ticker-wrap {
+            height: 50px;
+            overflow: hidden;
+            background: var(--brand-primary);
+        }
+
+        /* Header */
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--color-gold);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-alert);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .breadcrumb::before {
+            content: "●";
+            animation: blink 1.5s infinite;
+            color: var(--brand-alert);
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--brand-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-family: var(--font-body);
+            font-style: italic;
+            border-left: 3px solid var(--brand-alert);
+            padding-left: 16px;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.85;
+            color: #334155;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            color: var(--brand-primary);
+            letter-spacing: -0.5px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #7f1d1d;
+        }
+
+        /* Highlight Box - Crisis */
+        .highlight-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--brand-alert);
+            padding: 24px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .highlight-box h4 {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #991b1b;
+            font-weight: 800;
+        }
+
+        .highlight-box li {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #7f1d1d;
+        }
+
+        .highlight-box li::before {
+            content: "!";
+            color: var(--brand-alert);
+            position: absolute;
+            left: 0;
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        /* Impact Table Style */
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-display);
+            margin: 30px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .financial-table th {
+            background: var(--brand-primary);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .financial-table td {
+            padding: 16px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 15px;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .trend-up {
+            color: #16a34a;
+            font-weight: 700;
+        }
+
+        .trend-down {
+            color: #dc2626;
+            font-weight: 700;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4em;
+            line-height: 0.85;
+            font-weight: 700;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--brand-alert);
+            font-family: var(--font-display);
+        }
+
+        /* Meta Header */
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Sidebar */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--brand-alert);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        /* Share */
+        .share-sidebar {
+            position: absolute;
+            left: -70px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #64748b;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            background: var(--brand-alert);
+            color: white;
+            border-color: var(--brand-alert);
+            transform: translateY(-2px);
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .financial-table {
+                font-size: 13px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Disclaimer Box */
+        .disclaimer-top {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            color: #92400e;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .disclaimer-top svg {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div class="ticker-wrap">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{ "proName": "OANDA:XAGUSD", "title": "Silver" }, { "proName": "TVC:UKOIL", "title": "Brent Oil" }, { "proName": "OANDA:XAUUSD", "title": "Gold" }, { "proName": "TVC:VIX", "title": "Volatility" }],
+                            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": false, "displayMode": "adaptive", "locale": "en"
+                    }
+                </script>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="/index.html" class="logo">Silver<span>Price</span></a>
+            <a href="/index.html" class="nav-link"><span>&#8592;</span> Market Dashboard</a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn">𝕏</div>
+                <div class="share-btn">f</div>
+                <div class="share-btn">in</div>
+                <div class="share-btn">✉</div>
+            </div>
+        </div>
+
+        <main class="article-content">
+            <div class="breadcrumb">Geopolitics &bull; Market Analysis</div>
+
+            <h1>U.S. Energy Sector Surges on Speculation of Renewed Access to Venezuelan Reserves</h1>
+
+            <p class="subtitle">Market Analysis | Geopolitical Scenarios</p>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=ef4444&color=fff&size=64"
+                    class="author-avatar-sm" alt="Himanshu Kumar">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher &bull; Dec 31, 2025</span>
+                </div>
+            </div>
+
+            <div class="disclaimer-top">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong>Note:</strong> This article provides a scenario-based analysis of market reactions and
+                    investor expectations based on public political statements and policy indications. It does not
+                    report
+                    on a confirmed military operation or a completed change in governance.</span>
+            </div>
+
+            <!-- Contextual Hero Image -->
+            <img src="us_venezuela_energy_sector.png" alt="U.S. Energy Sector and Venezuela"
+                style="width:100%; margin-bottom: 40px; border-radius: 12px;">
+
+            <article class="post-body">
+                <p>A broad and significant rally materialized across the United States
+                    energy sector during Tuesday's trading session, propelled by investor optimism following a series of
+                    policy signals from Washington. These indications have suggested a potential future role for
+                    American
+                    corporations in the stabilization and redevelopment of Venezuela's vast but dilapidated oil
+                    industry.
+                    The market's positive response is rooted in speculation that a new geopolitical alignment could
+                    eventually grant U.S. firms long-term access to the largest proven crude oil reserves on the planet.
+                </p>
+
+                <p>The upward price movement was systemic, with notable gains posted by major integrated oil producers,
+                    independent exploration and production (E&P) companies, oilfield service providers, and downstream
+                    refining operators. This market reaction reflects a forward-looking repricing of latent growth
+                    opportunities, encompassing potential future capital projects, extensive service contracts, and a
+                    prospective realignment of energy dynamics within the Western Hemisphere. These developments are
+                    occurring within the context of a structurally constrained global oil market, where years of
+                    underinvestment and persistent geopolitical tensions in other key producing regions have created a
+                    fragile supply-demand balance.</p>
+
+                <p style="font-style: italic; font-size: 0.9em; color: var(--text-muted);">Editorial Note: This article
+                    provides a scenario-based analysis of market reactions and investor expectations based on public
+                    political statements and policy indications. It does not report on a confirmed military operation or
+                    a
+                    completed change in governance.</p>
+
+                <h2>Chevron Identified as Best-Positioned for Near-Term Opportunities</h2>
+
+                <p>Among U.S. energy conglomerates, Chevron Corporation is widely perceived by market analysts as the
+                    entity most strategically positioned to capitalize on any future moderation of sanctions or a
+                    comprehensive restructuring of Venezuela's energy policy framework.</p>
+
+                <p>Chevron's distinct advantage is a direct result of its enduring and complex operational history
+                    within the country. Unlike the majority of its American peers, the company has successfully
+                    maintained a limited but continuous presence in Venezuela for several years, operating under a
+                    series of special licenses issued by U.S. authorities. These activities, conducted through
+                    established joint ventures with the state oil entity PDVSA, have allowed Chevron to preserve its
+                    operational infrastructure, institutional knowledge, and critical in-country relationships.</p>
+
+                <p>While its current output remains significantly constrained by existing restrictions, analysts posit
+                    that should political and regulatory conditions become more favorable to foreign investment, Chevron
+                    could leverage this existing footprint to accelerate production at a rate unmatchable by new
+                    entrants. Its technical familiarity with Venezuelan oil fields and historical operating data could
+                    enable a more rapid scaling of output, granting the company a significant first-mover advantage. It
+                    is this potential for near-term production growth that is a primary factor in the positive investor
+                    sentiment.</p>
+
+                <h2>Long-Term Optionality for ExxonMobil and ConocoPhillips Reassessed</h2>
+
+                <p>Beyond the immediate case for Chevron, investors are also recalibrating the long-term strategic
+                    implications for other U.S. supermajors, most notably ExxonMobil and ConocoPhillips. Both
+                    corporations held substantial assets in Venezuela prior to a wave of nationalizations in the
+                    mid-2000s.</p>
+
+                <p>For nearly two decades, these firms have been engaged in complex international arbitration
+                    proceedings to seek compensation for their expropriated assets. A future political transition or a
+                    fundamental policy reset in Venezuela could introduce novel pathways to resolve these long-standing
+                    legal and financial disputes. Potential resolutions could include direct negotiated settlements,
+                    asset-for-debt swaps, or the granting of new licenses for investment projects tied to the
+                    rehabilitation of the nation's oil sector.</p>
+
+                <p>The prospect of re-entering a resource basin of Venezuela's magnitude represents a material and
+                    valuable optionality for these companies' long-term reserve replacement and global growth
+                    strategies. While any such outcome remains highly uncertain, the market appears to be assigning a
+                    renewed, albeit small, probability to these favorable scenarios.</p>
+
+                <h2>Broader Energy Value Chain Responds to Redevelopment Prospects</h2>
+
+                <p>The wave of investor optimism has propagated across the entire energy value chain, reflecting a
+                    broader market thesis that a meaningful revival of Venezuela's oil industry would necessitate a
+                    multi-year, capital-intensive redevelopment program.</p>
+
+                <h3>Oilfield Services</h3>
+                <p>Companies in the oilfield services sector are seen as direct potential beneficiaries. A comprehensive
+                    effort to restart and expand Venezuelan production would require extensive deployment of modern
+                    drilling technologies, well rehabilitation services, seismic analysis, and advanced recovery
+                    techniques. Major service providers could be positioned to secure substantial, long-duration
+                    contracts should the political climate permit sustained reinvestment.</p>
+
+                <h3>Downstream Refiners</h3>
+                <p>U.S. Gulf Coast refining operators have also garnered significant investor attention. A large portion
+                    of this refining capacity is specifically engineered to process the heavy, sour crude grades that
+                    are characteristic of Venezuelan output. For years, sanctions have compelled these refiners to
+                    source similar crude from more distant and often higher-cost suppliers. A potential restoration of
+                    Venezuelan supply could materially improve feedstock economics and expand refining margins, though
+                    any such benefit would be contingent on future regulatory approvals and the operational realities of
+                    restoring export infrastructure.</p>
+
+                <h2>Global Oil Market Implications: A Nuanced Outlook</h2>
+
+                <p>While equity investors have reacted with optimism to the long-term supply potential, commodity market
+                    analysts maintain a more circumspect view regarding the near-term implications for crude oil prices.
+                </p>
+
+                <h3>Short-Term Outlook</h3>
+                <p>In the immediate term, the oil market continues to be dominated by a geopolitical risk premium. The
+                    ambiguity of the political situation, coupled with diplomatic tensions, is likely to keep the market
+                    highly sensitive to headline risk. Prevailing supply constraints, the production discipline of the
+                    OPEC+ alliance, and global demand trends will remain the primary drivers of near-term price action.
+                </p>
+
+                <h3>Long-Term Outlook</h3>
+                <p>A material increase in Venezuelan oil production would be a gradual, multi-year process. The
+                    country's energy infrastructure has suffered from systemic deterioration and would require tens of
+                    billions of dollars in capital investment and sustained technical intervention to restore output to
+                    historical levels. Consequently, even the most optimistic long-term supply scenarios are unlikely to
+                    create an immediate supply glut or precipitate a sharp decline in near-term crude prices.</p>
+
+                <h2>Conclusion: Pricing Possibilities in the Energy Sector</h2>
+
+                <p>U.S. energy equities have experienced a significant upward re-rating as investors digest the
+                    long-term implications of recent policy signals concerning Venezuela's oil sector. Chevron is
+                    currently viewed as the most immediate potential beneficiary due to its existing operational
+                    footprint. Concurrently, ExxonMobil, ConocoPhillips, and the broader oilfield services and refining
+                    sectors all offer varying degrees of long-term optionality tied to a potential reopening of one of
+                    the world's most significant, yet troubled, energy markets.</p>
+
+                <p>Although the challenges associated with a full-scale revival of Venezuela's oil industry are
+                    substantial and would unfold over a multi-year horizon, the renewed focus on potential access to its
+                    reserves has introduced a powerful and compelling new narrative into the energy investment
+                    landscape. For the time being, the market is pricing in the possibility, not the certainty, of
+                    structural change. However, in the context of a supply-constrained world, those possibilities are
+                    significant enough to drive capital across the entire sector.</p>
+
+                <p
+                    style="font-size: 0.9em; color: var(--text-muted); border-top: 1px solid var(--border-light); padding-top: 10px;">
+                    <strong>Disclaimer:</strong> This article presents a scenario-based market analysis for
+                    informational
+                    and educational purposes only. It does not report confirmed geopolitical events and should not be
+                    construed as investment advice.
+                </p>
+
+            </article>
+        </main>
+
+        <!-- Sidebar Widgets -->
+        <aside>
+            <div class="sticky-wrapper">
+
+                <!-- 1. Oil Prices -->
+                <div class="widget">
+                    <div class="widget-title">Crude Oil (Brent) <span>🛢️</span></div>
+                    <div class="tradingview-widget-container" style="height: 250px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "TVC:UKOIL",
+                                        "width": "100%",
+                                            "height": 250,
+                                                "locale": "en",
+                                                    "dateRange": "1M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(0, 0, 0, 1)",
+                                                                "underLineColor": "rgba(224, 224, 224, 1)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 2. Volatility (VIX) -->
+                <div class="widget">
+                    <div class="widget-title">Volatility Index (VIX) <span>⚠️</span></div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                                {
+                                    "symbol": "TVC:VIX",
+                                        "width": "100%",
+                                            "colorTheme": "light",
+                                                "isTransparent": true,
+                                                    "locale": "en"
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 3. Safe Havens -->
+                <div class="widget">
+                    <div class="widget-title">Safe Havens</div>
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "colorTheme": "light",
+                                        "dateRange": "12M",
+                                            "showChart": false,
+                                                "locale": "en",
+                                                    "width": "100%",
+                                                        "height": "250",
+                                                            "largeChartUrl": "",
+                                                                "isTransparent": true,
+                                                                    "tabs": [{ "title": "Assets", "symbols": [{ "s": "OANDA:XAUUSD", "d": "Gold" }, { "s": "FX:USDCHF", "d": "USD/CHF" }, { "s": "TVC:US10Y", "d": "10Y Bond" }] }]
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="widget"
+                    style="background: linear-gradient(135deg, #7f1d1d, #0f172a); color: white; border:none; text-align: center;">
+                    <div style="font-weight:700; font-size:18px; margin-bottom:10px;">🚨 Geopolitics Brief</div>
+                    <p style="font-size:13px; opacity:0.8; margin-bottom:20px;">Get real-time alerts on conflicts
+                        affecting commodity prices.</p>
+                    <button
+                        style="width: 100%; padding: 12px; background: white; color: #7f1d1d; font-weight: 700; border: none; border-radius: 6px; cursor: pointer;">Subscribe
+                        for Alerts</button>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="adsense-slot"
+        style="width:100%;min-height:250px;background:#f1f5f9;border:1px dashed #cbd5e1;display:flex;align-items:center;justify-content:center;color:#64748b;max-width: 1200px; margin: 0 auto;">
+        Advertisement
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size:14px; color:rgba(255,255,255,0.7)">Real-time precious metals analytics.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="../index.html#dashboard">Dashboard</a>
+                <a href="../index.html#news">News</a>
+                <a href="../about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:humanshuk8@gmail.com">humanshuk8@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 SilverPrice. All rights reserved.</div>
+    </footer>
+
+    <!-- Scroll Script -->
+    <script>
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
