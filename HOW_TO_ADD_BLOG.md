@@ -7,10 +7,10 @@ Adding a new blog post to the SilverPrice website is a simple two-step process. 
 1.  **Duplicate the Template**:
     *   Navigate to the `Blogs` folder.
     *   Copy the file named `BLOG_TEMPLATE.html`.
-    *   Paste it and rename the copy to your new filename (e.g., `4_blog.html`, `5_blog.html`, etc.).
+    *   Paste it and rename the copy to your new filename (e.g., `descriptive-blog-title.html`).
 
 2.  **Edit the New File**:
-    *   Open your new file (e.g., `4_blog.html`) in your code editor.
+    *   Open your new file (e.g., `descriptive-blog-title.html`) in your code editor.
     *   Look for comments starting with `<!-- REPLACE: ... -->`. These mark the sections you need to update.
     *   **Page Title**: Update the `<title>` tag at the top.
     *   **Headline**: Change the `<h1>` tag content.
@@ -35,7 +35,7 @@ Adding a new blog post to the SilverPrice website is a simple two-step process. 
     *   **Badge**: Update the `<span class="blog-badge">` text (e.g., "Market", "Analysis", "News").
     *   **Title**: Update `<div class="blog-title">` with your new post's title.
     *   **Excerpt**: Update `<p class="blog-excerpt">` with a short summary.
-    *   **Link**: **Crucial Step** — Update the `href` attribute in the "Read More" link to point to your new file path (e.g., `href="/Blogs/4_blog.html"`).
+    *   **Link**: **Crucial Step** — Update the `href` attribute in the "Read More" link to point to your new file path (e.g., `href="/Blogs/descriptive-blog-title.html"`).
 
 ## Checklist
 - [ ] Blog file created from template.
