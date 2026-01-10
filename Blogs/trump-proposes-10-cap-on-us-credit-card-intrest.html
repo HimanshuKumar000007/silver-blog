@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC9JDN566T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KC9JDN566T');
+    </script>
+
+    <title>Trump Floats 10% Cap on Credit Card Rates — Why Banks Are Alarmed</title>
+    <meta name="description"
+        content="Trump proposes a 10% cap on credit card interest rates. The move could ease consumer debt — or trigger a credit crunch. Here’s how banks, borrowers, and markets are affected.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Branding - Financial Policy Theme */
+            --brand-primary: #1e3a8a;
+            /* Navy Blue */
+            --brand-secondary: #334155;
+            --brand-accent: #dc2626;
+            /* Political Red */
+            --brand-safe: #16a34a;
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 8px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar (Navy) */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: var(--brand-primary);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Ticker Tape */
+        .ticker-wrap {
+            height: 40px;
+            overflow: hidden;
+            background: #000000;
+        }
+
+        /* Header */
+        .main-header {
+            background: #000000;
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--brand-accent);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--brand-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 0 0 1px var(--border-light);
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-text strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.85;
+            color: #334155;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 800;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            color: var(--brand-primary);
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--brand-accent);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #334155;
+        }
+
+        /* Policy Summary Box */
+        .policy-box {
+            background: #eff6ff;
+            /* Light Blue */
+            border: 1px solid #bfdbfe;
+            padding: 24px;
+            border-radius: var(--radius-md);
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .policy-box h4 {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--brand-primary);
+            font-weight: 800;
+        }
+
+        .policy-box li {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #1e3a8a;
+        }
+
+        .policy-box li::before {
+            content: "🏛️";
+            color: var(--brand-primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Winners/Losers Grid */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .impact-col {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+        }
+
+        .impact-col.risk {
+            border-top: 4px solid var(--brand-accent);
+        }
+
+        .impact-col.benefit {
+            border-top: 4px solid var(--brand-safe);
+        }
+
+        .impact-title {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-family: var(--font-display);
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4em;
+            line-height: 0.85;
+            font-weight: 700;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--brand-primary);
+            font-family: var(--font-display);
+        }
+
+        /* Sidebar Widgets */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--brand-primary);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        /* Author Box */
+        .author-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .author-avatar-lg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-family: var(--font-display);
+            margin-bottom: 0;
+        }
+
+        /* Share */
+        .share-sidebar {
+            position: absolute;
+            left: -70px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #64748b;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            background: var(--brand-primary);
+            color: white;
+            border-color: var(--brand-primary);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: var(--brand-accent);
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Trump Floats 10% Cap on U.S. Credit Card Interest Rates — Why Banks Are Alarmed",
+      "datePublished": "2026-01-09",
+      "dateModified": "2026-01-09",
+      "author": {
+        "@type": "Person",
+        "name": "Himanshu Kumar"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SilverPrice",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://silverpricehub.online/logo.png"
+        }
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div class="ticker-wrap">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{ "proName": "SP:XLF", "title": "Financial Sector" }, { "proName": "NYSE:JPM", "title": "JPMorgan" }, { "proName": "NYSE:BAC", "title": "Bank of America" }, { "proName": "TVC:US02Y", "title": "2Y Yield" }],
+                            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": false, "displayMode": "adaptive", "locale": "en"
+                    }
+                </script>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Silver<span>Price</span></a>
+            <a href="index.html" class="nav-link"><span>&#8592;</span> Dashboard</a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn">𝕏</div>
+                <div class="share-btn">f</div>
+                <div class="share-btn">in</div>
+                <div class="share-btn">🔗</div>
+            </div>
+        </div>
+
+        <main class="article-content">
+            <div class="breadcrumb">U.S. Politics &bull; Credit Markets</div>
+
+            <h1>Trump Floats 10% Cap on U.S. Credit Card Interest Rates — Why Banks Are Alarmed</h1>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=1e3a8a&color=fff&size=64"
+                    class="author-avatar-sm" alt="Himanshu Kumar">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher &bull; Jan 09, 2026</span>
+                </div>
+            </div>
+
+            <!-- Conceptual Image -->
+            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Credit Cards and Capitol Hill" style="width:100%; margin-bottom: 40px; border-radius: 8px;">
+
+            <article class="post-body">
+
+                <p class="drop-cap"><strong>WASHINGTON/NEW YORK – JAN 9, 2026</strong> – A proposal by U.S. President
+                    Donald Trump to institute a temporary, one-year federal cap of 10% on credit card interest rates has
+                    triggered a significant and contentious debate across financial markets, political circles, and
+                    among consumer advocates. Advanced at a time when American households are contending with
+                    historically high debt levels, elevated borrowing costs, and persistent inflation, the proposal
+                    directly addresses a point of acute financial pressure for millions of consumers.</p>
+
+                <p>Proponents of the measure advocate for it as a necessary consumer protection initiative that could
+                    substantially ease financial distress and reduce default rates. Conversely, critics and a large
+                    segment of the financial industry warn that such an intervention could severely disrupt credit
+                    markets, lead to a sharp contraction in credit availability, and produce a range of negative,
+                    unintended consequences for banks, consumers, and the broader economy.</p>
+
+                <p>This analysis examines the specifics of the proposal, its potential impacts on various stakeholders,
+                    and the key risks and benefits it presents.</p>
+
+                <h2>1. The Context: A High-Stakes Proposal in a High-Debt Environment</h2>
+                <p>The significance of this proposal is rooted in the central role that credit cards play in the U.S.
+                    consumer economy. They are a primary mechanism for financing a wide array of household expenditures,
+                    including essential goods and services such as groceries, fuel, and healthcare, as well as
+                    discretionary spending and emergency costs.</p>
+                <p>The current macroeconomic environment has amplified the burden of this debt:</p>
+                <ul>
+                    <li>In response to inflation, the Federal Reserve has raised its benchmark interest rates, which has
+                        directly translated into higher Annual Percentage Rates (APRs) on credit cards, with many now
+                        exceeding 20%.</li>
+                    <li>Aggregate household debt has reached record levels.</li>
+                    <li>Concurrently, delinquency and charge-off rates on credit card balances have been rising,
+                        particularly among lower-income and subprime borrowers.</li>
+                </ul>
+                <p>This confluence of factors has created significant political and social pressure to address what many
+                    perceive as an excessive burden of high-interest consumer debt. A 10% federal cap would represent a
+                    dramatic and unprecedented intervention, fundamentally altering the pricing dynamics of the consumer
+                    credit market.</p>
+
+                <h2>Why This Matters Right Now</h2>
+                <p>Credit card APRs are already above 20%, delinquencies are rising, and consumers are using plastic to
+                    cover essentials. A rate cap doesn’t just change interest costs — it changes who gets access to
+                    credit at all.</p>
+
+
+                <h2>2. The Mechanics of the Proposed Rate Cap</h2>
+                <p>The core of President Trump's proposal is the establishment of a temporary, one-year legal ceiling of
+                    10% on credit card interest rates, to be applied nationwide. The stated objective is to reduce the
+                    financial strain on households by improving affordability and curtailing what are described as
+                    excessive interest charges.</p>
+                <p>However, the efficacy and ultimate impact of the policy are highly contingent on several unspecified
+                    details, including:</p>
+                <ul>
+                    <li><strong>Scope:</strong> Whether the cap would apply to all credit card products or only to
+                        certain categories.</li>
+                    <li><strong>Inclusion of Fees:</strong> Whether the 10% cap would be an "all-in" rate that includes
+                        various fees and penalty APRs, or if it would apply only to the standard interest rate on
+                        outstanding balances.</li>
+                    <li><strong>Implementation:</strong> Whether the cap would be mandatory for all federally regulated
+                        issuers or a voluntary program.</li>
+                </ul>
+                <p>These unresolved technicalities are critical, as they will determine the degree to which the policy
+                    is impactful or disruptive.</p>
+
+                <h2>3. The Economics of Credit Card Interest Rates</h2>
+                <p>Credit card interest rates are not arbitrary; they are the product of a complex risk-pricing model.
+                    Key determinants include:</p>
+                <ul>
+                    <li>The <a href="https://fred.stlouisfed.org/" target="_blank" rel="nofollow noopener"
+                            style="color:var(--brand-primary); text-decoration:underline;">Federal Reserve Economic Data
+                            (FRED)</a> Funds Rate, which sets the baseline cost of funds for banks.</li>
+                    <li>The credit risk profile of the borrower, with higher-risk borrowers being charged higher rates.
+                    </li>
+                    <li>Bank operating costs, including marketing, servicing, and fraud prevention.</li>
+                    <li>Expected losses from defaults and charge-offs.</li>
+                </ul>
+                <p>Because credit card lending is unsecured (i.e., not backed by collateral like a house or a car),
+                    banks price in a significant risk premium to compensate for the high probability of default. A legal
+                    cap on the interest rate forcibly overrides this risk-pricing mechanism, limiting the ability of
+                    lenders to be compensated for taking on higher-risk borrowers.</p>
+
+                <h2>4. Potential Impact on Consumers</h2>
+                <p>The proposal presents a clear trade-off for consumers, offering direct benefits to some while posing
+                    significant risks to others.</p>
+
+                <div class="impact-grid">
+                    <div class="impact-col benefit">
+                        <div class="impact-title" style="color:var(--brand-safe)">Potential Benefits</div>
+                        <ul>
+                            <li style="font-size:14px; margin-bottom:8px; list-style:none;">✅ <strong>Reduced Interest
+                                    Burden:</strong> Cardholders who carry a balance would see an immediate and
+                                substantial reduction in their monthly interest payments.</li>
+                            <li style="font-size:14px; margin-bottom:8px; list-style:none;">✅ <strong>Accelerated
+                                    Deleveraging:</strong> A greater portion of each monthly payment would be applied to
+                                the principal balance, enabling faster debt repayment.</li>
+                            <li style="font-size:14px; margin-bottom:8px; list-style:none;">✅ <strong>Reduced Financial
+                                    Stress:</strong> Lower borrowing costs would mitigate the risk of "debt spirals" for
+                                financially vulnerable households.</li>
+                        </ul>
+                    </div>
+                    <div class="impact-col risk">
+                        <div class="impact-title" style="color:var(--brand-accent)">Potential Risks</div>
+                        <ul>
+                            <li style="font-size:14px; margin-bottom:8px; list-style:none;">⚠️ <strong>Contraction in
+                                    Credit Availability:</strong> This is the most significant risk. In response to an
+                                inability to price for risk, banks would likely tighten their underwriting standards.
+                                This could result in a "credit crunch" where lower-income borrowers could lose access.
+                            </li>
+                            <li style="font-size:14px; margin-bottom:8px; list-style:none;">⚠️ <strong>Shift to
+                                    Predatory Lending:</strong> Consumers denied formal credit may turn to higher-cost,
+                                less-regulated alternatives like payday lenders.</li>
+                            <li style="font-size:14px; margin-bottom:8px; list-style:none;">⚠️
+                                <strong>Cross-Subsidization through Fees:</strong> Lenders might seek to offset lost
+                                interest income by increasing annual fees, late fees, or service charges.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>5. Potential Impact on Banks and the Financial Sector</h2>
+                <p>For financial institutions, a 10% rate cap would be a highly disruptive event, likely leading to
+                    significant strategic adjustments.</p>
+
+                <h3>Negative Consequences:</h3>
+                <ul>
+                    <li><strong>Margin Compression:</strong> Credit cards are a high-margin product for consumer banks.
+                        A hard cap would severely compress net interest margins (NIMs) and reduce profitability.</li>
+                    <li><strong>Reduced Risk Appetite:</strong> Lower potential returns would disincentivize lending to
+                        all but the most creditworthy (prime and super-prime) borrowers.</li>
+                    <li><strong>Product Restructuring:</strong> The economic model for many card products, particularly
+                        those with generous rewards programs subsidized by interest income, would become unviable.</li>
+                </ul>
+
+                <h3>Likely Strategic Responses:</h3>
+                <ul>
+                    <li>Significant tightening of credit approval standards.</li>
+                    <li>An increase in annual fees and other service charges.</li>
+                    <li>A reduction or elimination of cashback and rewards programs.</li>
+                    <li>A strategic shift in focus towards affluent, low-risk customer segments.</li>
+                </ul>
+                <p>The burden of the policy would likely be shifted from interest charges to other fees and a reduction
+                    in credit access for a large segment of the population.</p>
+
+                <h2>6. Broader Macroeconomic Implications</h2>
+                <p>The net effect on the U.S. economy is a subject of intense debate.</p>
+                <p><strong>Potential Positive Effects:</strong> The proposal could act as a form of economic stimulus.
+                    Lower interest payments would increase the disposable income of indebted households, potentially
+                    leading to higher consumer spending and a reduction in default rates.</p>
+                <p><strong>Potential Negative Effects:</strong> A significant contraction in credit supply could have a
+                    chilling effect on consumer spending, particularly for durable goods. It could also negatively
+                    impact small businesses that rely on credit cards for working capital. A sharp decline in financial
+                    sector profitability could also lead to reduced investment and employment in that sector.</p>
+                <p>The ultimate macroeconomic impact depends on the delicate balance between the stimulative effect of
+                    lower debt servicing costs and the contractionary effect of reduced credit availability.</p>
+
+                <h2>Conclusion</h2>
+                <p>President Trump's proposal to cap credit card interest rates at 10% represents one of the most
+                    significant potential interventions in the U.S. consumer credit market in decades. While the policy
+                    offers the clear and popular short-term benefit of providing financial relief to millions of
+                    indebted households, it carries substantial long-term risks. These include the potential for a
+                    severe contraction in credit availability, market distortions that could harm the very consumers the
+                    policy is intended to protect, and a significant disruption to the profitability and stability of
+                    the financial sector. The central economic question is whether the benefits of mandating cheaper
+                    credit for some will outweigh the costs of denying access to credit for others. Regardless of its
+                    legislative fate, the proposal has successfully elevated the issue of consumer debt to a national
+                    political priority and signaled a potential for greater regulatory scrutiny of the financial
+                    industry.</p>
+
+                <p style="font-size:14px; color:#64748b; margin-top:40px; font-style:italic;">Disclaimer: This article
+                    analyzes a policy proposal and does not constitute financial advice.</p>
+            </article>
+
+            <!-- Author Box -->
+            <div class="author-box">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=1e3a8a&color=fff&size=128"
+                    class="author-avatar-lg" alt="Himanshu Kumar">
+                <div class="author-info">
+                    <h4>About Himanshu Kumar</h4>
+                    <p>Himanshu is an Independent Market Researcher analyzing the intersection of political policy and
+                        financial markets. He covers banking regulation and macroeconomic trends.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar Widgets -->
+        <aside>
+            <div class="sticky-wrapper">
+
+                <!-- 1. Interest Rates -->
+                <div class="widget">
+                    <div class="widget-title">Benchmark Rates <span>🏦</span></div>
+                    <div class="tradingview-widget-container" style="height: 250px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "FRED:FEDFUNDS",
+                                        "width": "100%",
+                                            "height": 250,
+                                                "locale": "en",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(30, 58, 138, 1)",
+                                                                "underLineColor": "rgba(219, 234, 254, 1)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 2. Banking Sector -->
+                <div class="widget">
+                    <div class="widget-title">Financial Sector (XLF)</div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "AMEX:XLF",
+                                        "width": "100%",
+                                            "height": 220,
+                                                "locale": "en",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "#000",
+                                                                "isTransparent": true,
+                                                                    "autosize": false,
+                                                                        "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 3. Market Watch -->
+                <div class="widget">
+                    <div class="widget-title">Major US Banks</div>
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "colorTheme": "light",
+                                        "dateRange": "12M",
+                                            "showChart": false,
+                                                "locale": "en",
+                                                    "width": "100%",
+                                                        "height": "250",
+                                                            "largeChartUrl": "",
+                                                                "isTransparent": true,
+                                                                    "tabs": [{ "title": "Banks", "symbols": [{ "s": "NYSE:JPM", "d": "JPMorgan" }, { "s": "NYSE:BAC", "d": "Bank of America" }, { "s": "NYSE:C", "d": "Citigroup" }] }]
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="widget"
+                    style="background: linear-gradient(135deg, #1e3a8a, #000000); color: white; border:none; text-align: center;">
+                    <div style="font-weight:700; font-size:18px; margin-bottom:10px;">📉 Debt Cycle Report</div>
+                    <p style="font-size:13px; opacity:0.8; margin-bottom:20px;">Understand how credit cycles impact your
+                        portfolio.</p>
+                    <button
+                        style="width: 100%; padding: 12px; background: white; color: #1e3a8a; font-weight: 700; border: none; border-radius: 6px; cursor: pointer;">Subscribe
+                        Free</button>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size:14px; color:rgba(255,255,255,0.7)">Real-time precious metals analytics.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="../index.html#dashboard">Dashboard</a>
+                <a href="../index.html#news">News</a>
+                <a href="../about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:humanshuk8@gmail.com">humanshuk8@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2026 SilverPrice. All rights reserved.</div>
+    </footer>
+
+    <!-- Scroll Script -->
+    <script>
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
