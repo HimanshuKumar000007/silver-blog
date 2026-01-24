@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC9JDN566T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KC9JDN566T');
+    </script>
+
+    <!-- Schema for Google Discover -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Wall Street Exhibits Volatility as Sector Divergence and Investor Caution Emerge",
+      "datePublished": "2026-01-24",
+      "dateModified": "2026-01-24",
+      "author": {
+        "@type": "Person",
+        "name": "Himanshu Kumar",
+        "sameAs": [
+          "https://twitter.com/himanshukumar",
+          "https://www.linkedin.com/in/himanshukumar"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SilverPrice",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://silverpricehub.online/logo.png"
+        }
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://silverpricehub.online/Blogs/wall-street-volatility.png",
+        "width": 1200,
+        "height": 675
+      }
+    }
+    </script>
+
+    <title>Wall Street Volatility: Sector Divergence & Investor Caution | SilverPrice</title>
+    <meta name="description"
+        content="U.S. stock markets conclude a volatile week with sector divergence. Tech stocks falter while the Dow shows resilience. Explore the shift in market sentiment and what it means for investors.">
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="dateModified" content="2026-01-24">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Branding - Bull Market Theme */
+            --brand-primary: #0f172a;
+            /* Dark Navy */
+            --brand-secondary: #334155;
+            --brand-accent: #dc2626;
+            /* Urgent Red for this news */
+            --brand-chart: #0ea5e9;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --brand-gold: #d97706;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 12px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: var(--brand-accent);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Header */
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--brand-gold);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--brand-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 0 0 1px var(--border-light);
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-text strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .update-line {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: -10px;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.85;
+            color: #334155;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            color: var(--brand-primary);
+            letter-spacing: -0.5px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--brand-accent);
+        }
+
+        /* Executive Summary Box */
+        .exec-box {
+            background: #fef2f2;
+            /* Light Red */
+            border-left: 4px solid var(--brand-accent);
+            padding: 24px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .exec-box h4 {
+            margin-top: 0;
+            font-size: 17px;
+            color: #991b1b;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .exec-box li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #7f1d1d;
+            list-style-type: none;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .exec-box li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4em;
+            line-height: 0.85;
+            font-weight: 700;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--brand-accent);
+            font-family: var(--font-display);
+        }
+
+        /* Sidebar Widgets */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--brand-primary);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        /* Author Box */
+        .author-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .author-avatar-lg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-family: var(--font-display);
+            margin-bottom: 0;
+        }
+
+        /* Share */
+        .share-sidebar {
+            position: absolute;
+            left: -70px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #64748b;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            background: var(--brand-accent);
+            color: white;
+            border-color: var(--brand-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: var(--brand-gold);
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">Silver<span>Price</span></a>
+            <a href="../index.html" class="nav-link"><span>&#8592;</span> Strategy Dashboard</a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn">𝕏</div>
+                <div class="share-btn">f</div>
+                <div class="share-btn">in</div>
+                <div class="share-btn">✉</div>
+            </div>
+        </div>
+
+        <main class="article-content">
+            <div class="breadcrumb">Markets &bull; Analysis</div>
+
+            <h1>Wall Street Exhibits Volatility as Sector Divergence and Investor Caution Emerge</h1>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=dc2626&color=fff&size=64"
+                    class="author-avatar-sm" alt="Himanshu Kumar">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher &bull; Jan 24, 2026</span>
+                </div>
+            </div>
+
+            <p class="update-line">Updated January 24, 2026</p>
+
+            <!-- Hero Image -->
+            <img src="wall-street-volatility.png" alt="Concept art of Wall Street sectoral divergence"
+                style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 32px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+
+            <article class="post-body">
+
+                <p class="drop-cap"><strong>U.S. stock markets have concluded a volatile trading week</strong> with a
+                    mixed and divergent performance, as the Dow Jones Industrial Average demonstrated relative
+                    resilience while the broader S&P 500 and the technology-centric Nasdaq Composite faced notable
+                    headwinds.</p>
+
+                <p>This uneven market action is largely attributable to a series of disappointing corporate earnings
+                    reports from several major technology companies, which has prompted a significant reassessment of
+                    growth expectations and valuations within the sector.</p>
+
+                <p>Investor sentiment has palpably shifted towards a more cautious posture, influenced by a confluence
+                    of weak technology sector results, persistent geopolitical uncertainty, and shifting expectations
+                    regarding the future path of interest rates and economic growth. The divergent performance across
+                    the major indices highlights a growing schism between traditional value-oriented stocks and the
+                    growth-focused technology shares that have led the market for much of the past decade.</p>
+
+                <p>This dynamic raises a critical question for global investors: is the U.S. stock market entering a
+                    new, more uncertain phase after years of technology-driven gains?</p>
+
+                <h2>Market Dynamics of the Past Week</h2>
+                <p>The preceding trading week was characterized by sharp intraday swings in U.S. equities as market
+                    participants digested a significant volume of new information, including key corporate earnings
+                    reports, macroeconomic data releases, and evolving geopolitical developments.</p>
+
+                <div class="exec-box">
+                    <h4>🚨 Key Market Movements</h4>
+                    <ul>
+                        <li><strong>Dow Jones Industrial Average:</strong> Exhibited relative strength, supported by
+                            industrial, financial, and defensive stocks.</li>
+                        <li><strong>S&P 500:</strong> Traded largely sideways, reflecting mixed performance across
+                            diverse sectors.</li>
+                        <li><strong>Nasdaq Composite:</strong> Significantly underperformed due to weaker earnings from
+                            tech giants.</li>
+                        <li><strong>Growth Sell-off:</strong> Disappointing results triggered a targeted sell-off in
+                            growth-oriented stocks.</li>
+                    </ul>
+                </div>
+
+                <h2>The Technology Sector: A Source of Market Drag</h2>
+                <p>For much of the last decade, the technology sector has been the undisputed leader of the U.S. market
+                    rally, driven by powerful secular trends such as the adoption of cloud computing, the rise of
+                    artificial intelligence (AI), the expansion of e-commerce, and the proliferation of digital
+                    services. However, the sector is now confronting a series of challenges that are tempering investor
+                    optimism.</p>
+
+                <h3>Slowing Earnings Growth and Cautious Guidance</h3>
+                <p>Several major technology companies reported earnings that, while still positive, failed to meet the
+                    market's high expectations. Even more importantly, their forward-looking guidance for the coming
+                    quarters was cautious, signaling that the period of hyper-growth may be moderating. In a market
+                    where high expectations are already priced in, even minor disappointments can trigger significant
+                    negative price reactions.</p>
+
+                <h3>Elevated Valuation Concerns</h3>
+                <p>Technology stocks have historically traded at premium valuations (e.g., higher price-to-earnings
+                    ratios) compared to more traditional, value-oriented sectors. This premium is justified by
+                    expectations of superior future growth. When that growth trajectory is called into question, or when
+                    the broader economic environment becomes more uncertain, investors begin to reassess the premium
+                    they are willing to pay for future profits.</p>
+
+                <h3>Heightened Sensitivity to Interest Rates</h3>
+                <p>Growth stocks are, by their nature, "long-duration" assets, meaning that a large portion of their
+                    current market value is derived from profits that are expected to be generated far in the future. In
+                    a higher interest rate environment, the present value of these distant future earnings is reduced
+                    (due to a higher discount rate). This mathematical reality makes the technology sector particularly
+                    vulnerable during periods of monetary policy uncertainty.</p>
+
+                <h2>The Influence of Geopolitical and Macroeconomic Uncertainty</h2>
+                <p>Beyond company-specific earnings, broader macroeconomic and geopolitical risks are also contributing
+                    to the current cautious market sentiment.</p>
+
+                <p><strong>Geopolitical Risk:</strong> Ongoing global tensions involving major powers, persistent trade
+                    disputes, and the risk of regional conflicts have increased uncertainty surrounding the stability of
+                    global supply chains, energy markets, and overall economic activity.</p>
+
+                <p><strong>Monetary Policy Uncertainty:</strong> The future path of monetary policy remains one of the
+                    most significant drivers of market volatility. Investors are currently attempting to decipher
+                    conflicting signals regarding interest rate cuts, inflation trajectory, and economic resilience.</p>
+
+                <h2>Sectoral Performance: A Divergent Picture</h2>
+                <p>The recent market action has not been monolithic, with clear divergences emerging across different
+                    sectors of the economy.</p>
+
+                <ul>
+                    <li><strong>Outperformers:</strong> Industrial and financial stocks have shown relative strength.
+                    </li>
+                    <li><strong>Mixed Performers:</strong> Energy stocks influenced by oil volatility; consumer stocks
+                        reflecting mixed spending signals.</li>
+                    <li><strong>Underperformers:</strong> Technology and high-growth stocks lagging due to earnings and
+                        valuation concerns.</li>
+                </ul>
+
+                <p>This sector rotation is a classic sign of a market that is becoming more discerning and risk-aware.
+                    Instead of a broad "risk-on" or "risk-off" sentiment, investors are becoming more selective,
+                    favoring companies with stable cash flows and reasonable valuations over those with more speculative
+                    growth stories.</p>
+
+                <h2>Conclusion: A Market at a Crossroads</h2>
+                <p>The recent volatility and sector divergence on Wall Street are more than just a week of unsettled
+                    trading. They reflect a market that is at a fundamental crossroads, grappling with deeper questions
+                    about the sustainability of growth, the future path of interest rates, the impact of geopolitics,
+                    and the durability of the technology-driven market gains of the past several years.</p>
+
+                <p>The relative strength of the Dow Jones compared to the weakness in the Nasdaq indicates that a
+                    significant reassessment of risk and a reallocation of capital are underway, rather than a wholesale
+                    abandonment of the equity asset class.</p>
+
+                <p>Volatility, in this context, is not a signal of panic. It is a signal of transition. The market is
+                    moving from a phase of broad, nearly uniform optimism to one of selective confidence. Whether this
+                    transition resolves into a broader market correction, a prolonged period of sideways consolidation,
+                    or a renewed, more narrowly-focused rally will depend on the evolution of corporate earnings,
+                    central bank policy decisions, and the global geopolitical situation in the months ahead.</p>
+
+                <p
+                    style="font-size:12px; color:gray; font-style:italic; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 40px;">
+                    Disclaimer: This article is for informational and educational purposes only and does not constitute
+                    financial or investment advice.</p>
+
+            </article>
+
+        </main>
+
+        <aside>
+            <div class="sticky-wrapper">
+                <!-- Author Widget -->
+                <div class="widget" style="text-align: center;">
+                    <div class="widget-title">Lead Analyst</div>
+                    <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=dc2626&color=fff&size=128"
+                        alt="Himanshu Kumar"
+                        style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 12px; border: 2px solid var(--border-light);">
+                    <div style="font-weight: 700; color: var(--brand-primary); font-size: 18px;">Himanshu Kumar</div>
+                    <div style="font-size: 13px; color: var(--brand-accent); margin-bottom: 12px; font-weight: 600;">
+                        Independent Market Researcher</div>
+                    <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+                        Tracking the intersection of politics, central bank policy, and consumer finance.
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 10px;">
+                        <span style="font-size: 18px; cursor: pointer;">𝕏</span>
+                        <span style="font-size: 18px; cursor: pointer;">in</span>
+                        <span style="font-size: 18px; cursor: pointer;">✉</span>
+                    </div>
+                </div>
+
+                <!-- Recent Posts Widget -->
+                <div class="widget">
+                    <div class="widget-title">Latest Analysis</div>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 16px;">
+                            <a href="trump-urges-congress-cap-credit-card-rates.html"
+                                style="font-weight: 600; font-size: 14px; line-height: 1.4; display: block; margin-bottom: 4px;">
+                                Trump Urges Congress to Cap Credit Card Rates
+                            </a>
+                            <span style="font-size: 11px; color: var(--text-muted);">Jan 22, 2026</span>
+                        </li>
+                        <li style="margin-bottom: 16px;">
+                            <a href="markets-look-calm-households-stress.html"
+                                style="font-weight: 600; font-size: 14px; line-height: 1.4; display: block; margin-bottom: 4px;">
+                                When Markets Look Calm but Households Are Under Stress
+                            </a>
+                            <span style="font-size: 11px; color: var(--text-muted);">Jan 20, 2026</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size: 13px; line-height: 1.6; margin-bottom: 20px; color: rgba(255,255,255,0.6);">
+                    Providing real-time data and in-depth analysis on precious metals and the global economy.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Market Data</h4>
+                <a href="../index.html#charts">Silver Charts</a>
+                <a href="../index.html#charts">Gold Charts</a>
+                <a href="../index.html#ratios">Gold/Silver Ratio</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Analysis</h4>
+                <a href="../index.html#news">Latest News</a>
+                <a href="#">Economic Reports</a>
+                <a href="#">Central Bank Policy</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="../contact.html">Contact Us</a>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 SilverPriceHub. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Reading Progress Bar
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+</body>
+
+</html>
