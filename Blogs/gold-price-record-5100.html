@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Gold Price Surges to Record Above $5,100 | SilverPrice Analysis</title>
+    <meta name="description"
+        content="Gold surges to a historic, nominal record high above $5,100 per ounce amidst escalating geopolitical uncertainty and sovereign debt concerns.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC9JDN566T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KC9JDN566T');
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Branding - Financial Theme */
+            --brand-primary: #0f172a;
+            --brand-secondary: #1e293b;
+            --brand-accent: #0ea5e9;
+            --brand-gold: #eab308;
+            /* Gold for this blog */
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: var(--brand-gold);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Ticker Tape */
+        .ticker-wrap {
+            height: 72px;
+            overflow: hidden;
+            background: var(--brand-primary);
+        }
+
+        /* Header */
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: #fbbf24;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--brand-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 0 0 1px var(--border-light);
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-text strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.85;
+            color: #2c3e50;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #fffbeb;
+            /* Very light gold */
+            border-left: 4px solid var(--brand-gold);
+            padding: 24px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .highlight-box h3 {
+            font-size: 17px;
+            color: #b45309;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight-box li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #92400e;
+            list-style-type: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .highlight-box li::before {
+            content: "•";
+            color: var(--brand-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: var(--brand-primary);
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--brand-secondary);
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 3.5em;
+            line-height: 0.8;
+            font-weight: 700;
+            padding-right: 8px;
+            padding-top: 4px;
+            color: var(--brand-gold);
+            font-family: var(--font-display);
+        }
+
+        ul {
+            margin-bottom: 28px;
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        /* Sidebar Widgets */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Author Box */
+        .author-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .author-avatar-lg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-family: var(--font-display);
+            margin-bottom: 0;
+        }
+
+        /* Social Share Sidebar (Desktop) */
+        .share-sidebar {
+            position: absolute;
+            left: -60px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 18px;
+            box-shadow: var(--shadow-card);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            color: var(--brand-gold);
+            transform: scale(1.1);
+            border-color: var(--brand-gold);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Reading Progress -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Ticker -->
+    <div class="ticker-wrap">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{ "proName": "OANDA:XAUUSD", "title": "Gold" }, { "proName": "TVC:DXY", "title": "Dollar Index" }, { "proName": "FX:EURUSD", "title": "EUR/USD" }, { "proName": "OANDA:XAGUSD", "title": "Silver" }],
+                            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": false, "displayMode": "adaptive", "locale": "en"
+                    }
+                </script>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">Silver<span>Price</span></a>
+            <a href="../index.html" class="nav-link">
+                <span>&#8592;</span> Back to Dashboard
+            </a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <!-- Social Sidebar -->
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn">𝕏</div>
+                <div class="share-btn">f</div>
+                <div class="share-btn">in</div>
+                <div class="share-btn">🔗</div>
+            </div>
+        </div>
+
+        <!-- Main Article -->
+        <main class="article-content">
+            <div class="breadcrumb">Safe Haven • Macroeconomics</div>
+            <h1>Gold Price Surges to Record Above $5,100 Amidst Escalating Global Uncertainty</h1>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=eab308&color=fff&size=128"
+                    class="author-avatar-sm" alt="Himanshu Kumar">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher • Dec 31, 2025</span>
+                </div>
+            </div>
+
+            <!-- Conceptual Chart Image -->
+            <img src="gold_price_record_5100.png" alt="Gold Price Surge to $5,100"
+                style="width:100%; margin-bottom: 32px; box-shadow: var(--shadow-card);">
+
+            <article class="post-body">
+                <div class="highlight-box">
+                    <h3>Key Drivers</h3>
+                    <ul>
+                        <li><strong>Geopolitical Risk:</strong> Escalating global tensions driving flight to quality.
+                        </li>
+                        <li><strong>Sovereign Debt:</strong> Concerns over sustainable debt levels favoring hard assets.
+                        </li>
+                        <li><strong>Monetary Uncertainty:</strong> Ambiguous outlook for inflation and rates boosting
+                            gold's appeal.</li>
+                    </ul>
+                </div>
+
+                <p class="drop-cap"><strong>NEW YORK/LONDON – DEC 31, 2025 –</strong> The price of gold surged to a
+                    historic, nominal record high, trading above $5,100 per ounce in a powerful rally driven by a
+                    significant flight of capital into safe-haven assets. The move reflects a palpable increase in
+                    investor anxiety, fueled by a confluence of escalating geopolitical tensions, mounting concerns over
+                    the sustainability of global sovereign debt, and a high degree of uncertainty surrounding
+                    international trade and future monetary policy.</p>
+
+                <p>The sharp appreciation in the price of gold is more than a notable event within the commodity
+                    complex; it is a critical macroeconomic signal. Historically, gold's value is inversely correlated
+                    with confidence in the stability of the global financial and political order. When investors become
+                    increasingly uncertain about the future trajectory of currencies, interest rates, and geopolitical
+                    stability, they traditionally reallocate capital towards gold and other precious metals, which are
+                    perceived as durable stores of value. The current surge indicates a material shift in global risk
+                    sentiment.</p>
+
+                <h2>Primary Drivers of Gold's Record-Breaking Rally</h2>
+                <p>The current rally is not a speculative, momentum-driven event but is underpinned by a series of
+                    fundamental and interconnected macroeconomic and geopolitical factors.</p>
+
+                <h3>1. Intensifying Geopolitical Tensions</h3>
+                <p>A primary catalyst for the recent move has been an escalation in global political and military
+                    tensions. A series of ongoing conflicts, unresolved trade disputes, and diplomatic standoffs between
+                    major world powers have created a climate of heightened uncertainty. This has led to a structural
+                    increase in the "geopolitical risk premium" demanded by investors.</p>
+                <p>During such periods, a predictable rotation occurs as asset managers reduce their exposure to
+                    risk-sensitive assets, such as equities, and increase their holdings in traditional safe havens like
+                    gold, silver, and high-quality sovereign bonds. Gold's historical performance during periods of war,
+                    sanctions, and political crises is well-documented; its value is not tied to the fortunes of any
+                    single government or currency, making it the definitive hedge against international instability.</p>
+
+                <h3>2. Growing Concerns Over Global Sovereign Debt</h3>
+                <p>Government debt levels in many of the world's largest economies are at or near all-time highs. Many
+                    nations continue to run large fiscal deficits, and the cost of servicing this debt has increased
+                    significantly due to the higher interest rate environment of the past few years. This macroeconomic
+                    backdrop creates several long-term risks that are bullish for gold:</p>
+                <ul>
+                    <li>The potential for higher, more persistent inflation in the long run as governments may be
+                        tempted to monetize their debt.</li>
+                    <li>Concerns about currency debasement as the supply of fiat money expands.</li>
+                    <li>The risk of financial instability should a major sovereign issuer face a debt crisis.</li>
+                </ul>
+                <p>In this context, gold is widely viewed by institutional and retail investors alike as a form of
+                    insurance against the long-term consequences of unsustainable debt accumulation and the potential
+                    for currency devaluation.</p>
+
+                <!-- Embedded Gold Widget -->
+                <div class="widget" style="margin: 32px 0; border-left: none; background: #fafafa;">
+                    <div style="font-size:12px; color:var(--text-muted); margin-bottom:10px; font-weight:700;">LIVE
+                        GOLD PRICE ACTION</div>
+                    <div class="tradingview-widget-container" style="height: 100px; width: 100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                                {
+                                    "symbol": "OANDA:XAUUSD",
+                                        "width": "100%",
+                                            "colorTheme": "light",
+                                                "isTransparent": true,
+                                                    "locale": "en"
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <h3>3. Uncertainty in Global Trade and Economic Policy</h3>
+                <p>Ambiguity surrounding the future of global trade policies, the potential for new tariffs, and the
+                    ongoing fragmentation of global supply chains are adding another layer of volatility to financial
+                    markets. These trade tensions have the potential to slow global economic growth, increase
+                    inflationary pressures, and disrupt corporate earnings. Gold benefits from this uncertainty as
+                    investors seek a neutral asset that is insulated from the vagaries of international trade disputes.
+                </p>
+
+                <h3>4. The Ambiguous Outlook for Inflation and Interest Rates</h3>
+                <p>While headline inflation has moderated from its recent peaks in some regions, the underlying price
+                    level remains significantly elevated. Concurrently, there is a high degree of uncertainty regarding
+                    the future path of monetary policy, as central banks debate the appropriate timing and pace of
+                    potential interest rate cuts. Gold tends to perform well in an environment where real interest rates
+                    are low or falling and where inflation expectations are rising or uncertain. The current market
+                    dynamic, where investors are hedging against the risk that inflation remains persistent or
+                    re-accelerates unexpectedly, is a significant tailwind for gold.</p>
+
+                <h2>Interpreting the Signal: What Record Gold Prices Indicate</h2>
+                <p>Gold is often referred to as the "fear barometer" of global markets. A new all-time high is a
+                    powerful signal that typically indicates:</p>
+                <ul>
+                    <li>A rising perception of systemic risk within the financial system.</li>
+                    <li>Weakening confidence in the long-term value of major fiat currencies.</li>
+                    <li>Market expectations of future monetary easing (e.g., interest rate cuts), which makes
+                        non-yielding gold more attractive.</li>
+                    <li>Growing concerns about the sustainability of global economic growth.</li>
+                </ul>
+                <p>The current surge suggests that, despite elevated equity market valuations, a significant cohort of
+                    investors is not fully confident in the long-term stability of the prevailing financial and policy
+                    frameworks.</p>
+
+                <h2>Broader Market Impact and Correlations</h2>
+                <p>The rally in gold is not occurring in a vacuum; it is part of a broader, albeit selective, flight to
+                    quality.</p>
+                <ul>
+                    <li><strong>Silver and Other Safe Havens:</strong> Silver prices have also climbed, benefiting from
+                        both the safe-haven bid and its own strong industrial demand fundamentals. Other traditional
+                        safe-haven assets, including U.S. Treasury bonds, the Japanese yen, and the Swiss franc, are
+                        also attracting capital inflows.</li>
+                    <li><strong>The Gold-Equity Correlation:</strong> Interestingly, gold's surge is occurring at a time
+                        when major stock market indices also remain at or near elevated levels. This concurrent strength
+                        in both a "risk-on" asset (equities) and a "risk-off" asset (gold) often indicates a complex
+                        market environment characterized by cautious optimism. It suggests that while investors are
+                        still participating in the equity market, likely driven by expectations of policy support or
+                        rate cuts, they are simultaneously hedging their portfolios against potential downside risks.
+                    </li>
+                </ul>
+                <p>The broader market impact of a sustained gold rally includes:</p>
+                <ul>
+                    <li><strong>Stock Markets:</strong> Potential pressure on high-valuation growth stocks (like
+                        technology) due to the underlying risk aversion, but a positive impact on gold mining stocks and
+                        other commodity producers.</li>
+                    <li><strong>Currency Markets:</strong> Gold rallies are often correlated with a weakening U.S.
+                        dollar, as gold is priced in dollars globally.</li>
+                    <li><strong>Bond Markets:</strong> The flight to safety that benefits gold also benefits
+                        high-quality government bonds, putting downward pressure on their yields.</li>
+                </ul>
+
+                <h2>Conclusion: A Reflection of a Changing Global Financial System</h2>
+                <p>The surge in the price of gold to a new record above $5,100 per ounce is more than a simple commodity
+                    market milestone. It is a significant macroeconomic signal that reflects a growing and rational
+                    investor response to a world of heightened uncertainty, unprecedented debt levels, persistent
+                    inflation, and rising geopolitical risk.</p>
+                <p>Historically, record gold prices often emerge during periods of transition in the global economy.
+                    They do not necessarily predict an imminent collapse, but they do reveal a deep-seated and
+                    widespread caution. As the market attempts to balance a fragile optimism about future growth with a
+                    tangible fear of instability, gold continues to perform its timeless function as one of the world's
+                    most trusted and reliable financial anchors.</p>
+
+                <p
+                    style="font-size: 13px; color: #64748b; font-style: italic; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    Disclaimer: This article is for informational and educational purposes only and does not constitute
+                    financial or investment advice.
+                </p>
+            </article>
+
+            <!-- Author Box -->
+            <div class="author-box">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=eab308&color=fff&size=128"
+                    class="author-avatar-lg" alt="Himanshu Kumar">
+                <div class="author-info">
+                    <h4>About Himanshu Kumar</h4>
+                    <p>Himanshu is an Independent Market Researcher. He tracks global monetary policy and central bank
+                        reserve data to forecast long-term trends in gold and sovereign debt markets.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar Widgets -->
+        <aside>
+            <div class="sticky-wrapper">
+
+                <!-- 1. Gold Chart -->
+                <div class="widget">
+                    <div class="widget-title">Gold Spot Price (XAU) <span>🟡</span></div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "OANDA:XAUUSD",
+                                        "width": "100%",
+                                            "height": 220,
+                                                "locale": "en",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(234, 179, 8, 1)",
+                                                                "underLineColor": "rgba(253, 224, 71, 0.3)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 2. Miners ETF -->
+                <div class="widget">
+                    <div class="widget-title">Gold Miners (GDX) <span>⛏️</span></div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "AMEX:GDX",
+                                        "width": "100%",
+                                            "height": 220,
+                                                "locale": "en",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(16, 185, 129, 1)",
+                                                                "underLineColor": "rgba(236, 253, 245, 1)",
+                                                                    "isTransparent": true,
+                                                                        "autosize": false,
+                                                                            "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 3. Market Pulse -->
+                <div class="widget">
+                    <div class="widget-title">Sector Watch</div>
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "colorTheme": "light",
+                                        "dateRange": "12M",
+                                            "showChart": false,
+                                                "locale": "en",
+                                                    "width": "100%",
+                                                        "height": "250",
+                                                            "largeChartUrl": "",
+                                                                "isTransparent": true,
+                                                                    "tabs": [{ "title": "Safe Havens", "symbols": [{ "s": "OANDA:XAUUSD", "d": "Gold" }, { "s": "TVC:DXY", "d": "US Dollar" }, { "s": "TVC:US10Y", "d": "10Y Yield" }] }]
+                                }
+                            </script>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size:14px; color:rgba(255,255,255,0.7)">Real-time precious metals analytics.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="../index.html#dashboard">Dashboard</a>
+                <a href="../index.html#news">News</a>
+                <a href="../about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:humanshuk8@gmail.com">humanshuk8@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 SilverPrice. All rights reserved.</div>
+    </footer>
+
+    <!-- Scroll Script -->
+    <script>
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
