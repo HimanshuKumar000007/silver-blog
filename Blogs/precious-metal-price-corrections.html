@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>An Analysis of Precious Metal Price Corrections Amidst Perceived Risk | SilverPrice</title>
+    <meta name="description"
+        content="An in-depth analysis of why precious metals correct during periods of perceived risk, focusing on the central role of real interest rates as the primary driver.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC9JDN566T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KC9JDN566T');
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Branding - Financial Theme */
+            --brand-primary: #0f172a;
+            --brand-secondary: #1e293b;
+            --brand-accent: #0ea5e9;
+            --brand-gold: #eab308;
+            --brand-silver: #94a3b8;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--brand-gold) 0%, var(--brand-silver) 100%);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Ticker Tape */
+        .ticker-wrap {
+            height: 72px;
+            overflow: hidden;
+            background: var(--brand-primary);
+        }
+
+        /* Header */
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: #fbbf24;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--brand-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 0 0 1px var(--border-light);
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-text strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.85;
+            color: #2c3e50;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-left: 4px solid var(--brand-gold);
+            padding: 24px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .highlight-box h3 {
+            font-size: 17px;
+            color: #b45309;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight-box li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #92400e;
+            list-style-type: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .highlight-box li::before {
+            content: "•";
+            color: var(--brand-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: var(--brand-primary);
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--brand-secondary);
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 3.5em;
+            line-height: 0.8;
+            font-weight: 700;
+            padding-right: 8px;
+            padding-top: 4px;
+            color: var(--brand-gold);
+            font-family: var(--font-display);
+        }
+
+        ul {
+            margin-bottom: 28px;
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        /* Sidebar Widgets */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Author Box */
+        .author-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .author-avatar-lg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-family: var(--font-display);
+            margin-bottom: 0;
+        }
+
+        /* Social Share Sidebar (Desktop) */
+        .share-sidebar {
+            position: absolute;
+            left: -60px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 18px;
+            box-shadow: var(--shadow-card);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            color: var(--brand-gold);
+            transform: scale(1.1);
+            border-color: var(--brand-gold);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Reading Progress -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Ticker -->
+    <div class="ticker-wrap">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [{ "proName": "OANDA:XAUUSD", "title": "Gold" }, { "proName": "OANDA:XAGUSD", "title": "Silver" }, { "proName": "TVC:DXY", "title": "Dollar Index" }, { "proName": "FX:EURUSD", "title": "EUR/USD" }],
+                            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": false, "displayMode": "adaptive", "locale": "en"
+                    }
+                </script>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">Silver<span>Price</span></a>
+            <a href="../index.html" class="nav-link">
+                <span>&#8592;</span> Back to Dashboard
+            </a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <!-- Social Sidebar -->
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn">𝕏</div>
+                <div class="share-btn">f</div>
+                <div class="share-btn">in</div>
+                <div class="share-btn">🔗</div>
+            </div>
+        </div>
+
+        <!-- Main Article -->
+        <main class="article-content">
+            <div class="breadcrumb">Market Analysis • Strategy</div>
+            <h1>An Analysis of Precious Metal Price Corrections Amidst Perceived Risk: The Central Role of Real Interest
+                Rates</h1>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=eab308&color=fff&size=128"
+                    class="author-avatar-sm" alt="Himanshu Kumar">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher • Jan 31, 2026</span>
+                </div>
+            </div>
+
+            <!-- Feature Image -->
+            <img src="precious_metal_price_corrections.png" alt="Real Interest Rates vs Precious Metals"
+                style="width:100%; margin-bottom: 32px; box-shadow: var(--shadow-card);">
+
+            <article class="post-body">
+                <h2>Introduction: Deconstructing the Apparent Paradox</h2>
+                <p class="drop-cap">It is a common and often perplexing observation in financial markets that precious
+                    metals, particularly gold and silver, can experience sharp price corrections even during periods of
+                    elevated economic fear or geopolitical uncertainty. This phenomenon appears to contradict their
+                    fundamental role as safe-haven assets. However, a deeper analysis reveals that the primary driver of
+                    precious metal valuations is not an abstract concept of "fear," but a precise and quantifiable
+                    financial metric: <strong>real interest rates</strong>. An understanding of this relationship is
+                    essential for accurately interpreting the behavior of gold and silver and for avoiding common, often
+                    costly, investment misjudgments.</p>
+                <p>This analysis will dissect the mechanics of this relationship, explain why rising real interest rates
+                    are the most potent headwind for precious metals, and provide a historical framework for
+                    understanding the characteristic pattern of these "counterintuitive" sell-offs.</p>
+
+                <h2>The Foundational Principle: Opportunity Cost and Non-Yielding Assets</h2>
+                <p>The core of the issue lies in the fundamental nature of gold and silver as assets. They are
+                    non-productive, non-yielding financial instruments. They do not generate income. They do not pay
+                    interest, dividends, or coupons. Their entire return profile is derived from price appreciation.</p>
+                <p>Because of this inherent characteristic, the attractiveness of holding precious metals is determined
+                    not in a vacuum, but in direct competition with interest-bearing assets. The key variable in this
+                    competition is the real interest rate.</p>
+
+                <div class="highlight-box">
+                    <h3>Defining Real Interest Rates</h3>
+                    <p>The real interest rate is not the nominal or headline interest rate quoted by a central bank or
+                        available on a government bond. It is the inflation-adjusted rate of return.</p>
+                    <p><strong>Formula:</strong> Real Interest Rate ≈ Nominal Interest Rate - Inflation Rate</p>
+                    <ul>
+                        <li><strong>Positive Real Rate:</strong> 10-year bond yields 6% - Inflation 4% =
+                            <strong>+2%</strong> (Gaining purchasing power)</li>
+                        <li><strong>Negative Real Rate:</strong> 10-year bond yields 4% - Inflation 6% =
+                            <strong>-2%</strong> (Losing purchasing power)</li>
+                    </ul>
+                    <p>This distinction is the single most important variable in determining the medium-term direction
+                        of gold and silver prices.</p>
+                </div>
+
+                <h2>The Mechanism: Why Rising Real Rates are a Headwind for Precious Metals</h2>
+                <p>When real interest rates are negative or zero, the case for holding precious metals is compelling. An
+                    investor holding cash or government bonds is either earning no real return or is actively losing
+                    purchasing power. In this environment, a non-yielding asset like gold, which offers the potential
+                    for price appreciation and protection from inflation, is a highly attractive alternative. The
+                    opportunity cost of holding gold—the real return forgone by not holding an interest-bearing asset—is
+                    zero or negative.</p>
+                <p>However, when real interest rates rise and turn positive, the entire dynamic shifts. Investors are
+                    suddenly presented with a viable and attractive alternative to precious metals. They can allocate
+                    capital to:</p>
+                <ul>
+                    <li>Government bonds (e.g., U.S. Treasuries)</li>
+                    <li>Treasury bills</li>
+                    <li>High-yield savings accounts</li>
+                    <li>Money-market funds</li>
+                </ul>
+                <p>These assets begin to offer a positive, and often relatively safe, inflation-adjusted return. This
+                    dramatically increases the <strong>opportunity cost</strong> of holding a non-yielding asset like
+                    gold or silver. An investor must now weigh the potential for price appreciation in gold against the
+                    certain, positive real return offered by a government bond. As this opportunity cost rises, a
+                    rational reallocation of capital occurs, with funds flowing out of non-yielding precious metals and
+                    into yielding fixed-income instruments. This outflow of investment capital is what triggers the
+                    sell-off in gold and silver.</p>
+
+                <!-- Embedded Gold Widget -->
+                <div class="widget" style="margin: 32px 0; border-left: none; background: #fafafa;">
+                    <div style="font-size:12px; color:var(--text-muted); margin-bottom:10px; font-weight:700;">LIVE
+                        GOLD PRICE ACTION</div>
+                    <div class="tradingview-widget-container" style="height: 100px; width: 100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                                {
+                                    "symbol": "OANDA:XAUUSD",
+                                        "width": "100%",
+                                            "colorTheme": "light",
+                                                "isTransparent": true,
+                                                    "locale": "en"
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <h2>The Crucial Insight: Markets Trade Policy, Not Just Fear</h2>
+                <p>A common misconception among investors is that gold and silver should rise in direct proportion to
+                    inflation or general market fear. While this is often true in the initial phase of a crisis, it is
+                    an incomplete understanding of the market's behavior. Financial markets are forward-looking and are
+                    constantly attempting to price in the policy response to economic events, not just the events
+                    themselves.</p>
+                <p>Gold does not typically crash because inflation is rising. In fact, gold often performs very well
+                    during the initial stages of an inflationary cycle. The crash or significant correction in gold
+                    usually occurs when the market becomes convinced of two things:</p>
+                <ol>
+                    <li>That central banks are responding aggressively and effectively to the inflation problem by
+                        raising nominal interest rates.</li>
+                    <li>That this policy response will be successful in bringing inflation down over time.</li>
+                </ol>
+                <p>This combination is what causes real yields to turn positive and rise. Gold falls not when the
+                    economic fear disappears, but when the credibility of the policymakers in controlling the crisis is
+                    restored.</p>
+
+                <h2>The Counterintuitive Dynamic</h2>
+                <p>This process often feels deeply counterintuitive to the average investor. The headline news may still
+                    be dominated by high inflation figures and concerns about a potential recession. Geopolitical risks
+                    may remain elevated. The economic environment may still feel very risky.</p>
+                <p>However, if the market believes that central banks are committed to a "higher for longer" interest
+                    rate policy and that this policy will eventually win the war against inflation, then gold's primary
+                    utility as an inflation hedge is diminished. The prospect of earning a positive real return on cash
+                    or bonds becomes a more powerful driver of capital allocation than the ambient level of fear. This
+                    is precisely why gold and silver can experience sharp, sustained sell-offs during periods that still
+                    feel fraught with economic and political risk.</p>
+
+                <h2>Why Silver Often Falls Harder and Faster</h2>
+                <p>During these real-rate-driven corrections, silver typically underperforms gold, often falling much
+                    harder and faster. This amplified downside volatility is due to silver's hybrid nature and its
+                    market structure.</p>
+                <ul>
+                    <li><strong>Higher Speculative Component:</strong> Silver's market has a higher concentration of
+                        speculative and leveraged traders. When a downturn begins, the unwinding of these leveraged
+                        positions can be rapid and severe, exacerbating the sell-off.</li>
+                    <li><strong>Smaller, Less Liquid Market:</strong> The smaller size of the silver market means that
+                        the same amount of capital outflow will have a much larger percentage impact on its price
+                        compared to the deep and highly liquid gold market.</li>
+                    <li><strong>Weakening Industrial Demand Outlook:</strong> Rising real interest rates are a signal of
+                        tight monetary policy, which is designed to slow down the economy. This leads to a downward
+                        revision of expectations for future industrial activity. As a critical industrial metal, the
+                        forecast for silver's industrial demand weakens, adding another layer of selling pressure that
+                        does not affect gold in the same way.</li>
+                </ul>
+
+                <h2>The Historical Pattern: A Predictable Sequence</h2>
+                <p>Across numerous economic cycles over the past 50 years, this sequence has repeated with remarkable
+                    consistency:</p>
+                <ul>
+                    <li><strong>Phase 1: Inflation Rises.</strong> As inflation begins to accelerate and real rates turn
+                        negative, both gold and silver rally strongly.</li>
+                    <li><strong>Phase 2: Central Banks Turn Hawkish.</strong> In response to the inflation, central
+                        banks begin an aggressive cycle of raising nominal interest rates.</li>
+                    <li><strong>Phase 3: Real Rates Turn Positive.</strong> At a certain point, the market becomes
+                        convinced that the central bank's tightening policy will be sustained and will eventually bring
+                        inflation under control. Nominal rates rise faster than inflation expectations, causing real
+                        rates to turn positive and rise.</li>
+                    <li><strong>Phase 4: Metals Correct Sharply.</strong> The rising opportunity cost triggers a
+                        significant sell-off in gold and silver. This is often accompanied by a strengthening of the
+                        U.S. dollar, which adds further pressure.</li>
+                    <li><strong>Phase 5: The Policy Breaks Something.</strong> The tight monetary policy eventually
+                        causes a significant economic slowdown or a financial crisis, forcing the central bank to
+                        reverse course and begin cutting rates.</li>
+                    <li><strong>Phase 6: Metals Recover.</strong> As the policy pivots back to easing and real rates
+                        begin to fall again, the cycle begins anew, and precious metals start their next major rally.
+                    </li>
+                </ul>
+                <p>Crucially, the sharp sell-off in Phase 4 often occurs before the full extent of the economic damage
+                    from the tight policy becomes obvious in the headline economic data.</p>
+
+                <h2>Conclusion: The Centrality of Opportunity Cost</h2>
+                <p>The primary driver of major corrections in the precious metals market is not the absence of fear, but
+                    the re-emergence of a viable, low-risk, interest-bearing alternative. Gold and silver do not crash
+                    because the world has suddenly become safe. They crash because holding cash or government bonds
+                    starts to pay a real, inflation-adjusted return again.</p>
+                <p>When the opportunity cost of holding a non-yielding asset rises, capital reallocates accordingly. A
+                    clear understanding of this dynamic is essential for navigating the often "mysterious" and seemingly
+                    counterintuitive price action of the precious metals market.</p>
+
+                <p
+                    style="font-size: 13px; color: #64748b; font-style: italic; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    Disclaimer: This analysis is for educational purposes and should not be considered financial advice.
+                    Market conditions change rapidly, and investors should conduct their own research or consult a
+                    professional.</p>
+            </article>
+
+            <!-- Author Box -->
+            <div class="author-box">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=eab308&color=fff&size=128"
+                    class="author-avatar-lg" alt="Himanshu Kumar">
+                <div class="author-info">
+                    <h4>About Himanshu Kumar</h4>
+                    <p>Himanshu is an Independent Market Researcher specializing in macroeconomic trends, safe-haven
+                        assets, and global monetary policy. He provides in-depth analysis on precious metals markets and
+                        their role in portfolio diversification.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar Widgets -->
+        <aside>
+            <div class="sticky-wrapper">
+
+                <!-- 1. Gold Chart -->
+                <div class="widget">
+                    <div class="widget-title">Gold Spot Price (XAU) <span>🟡</span></div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "OANDA:XAUUSD",
+                                        "width": "100%",
+                                            "height": 220,
+                                                "locale": "en",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(234, 179, 8, 1)",
+                                                                "underLineColor": "rgba(253, 224, 71, 0.3)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 2. Silver Chart -->
+                <div class="widget">
+                    <div class="widget-title">Silver Spot Price (XAG) <span>⚪</span></div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "OANDA:XAGUSD",
+                                        "width": "100%",
+                                            "height": 220,
+                                                "locale": "en",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(148, 163, 184, 1)",
+                                                                "underLineColor": "rgba(148, 163, 184, 0.3)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>SilverPrice</h4>
+                <a href="../index.html">Home</a>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Market Data</h4>
+                <a href="#">Silver Chart</a>
+                <a href="#">Gold Chart</a>
+                <a href="#">Ratio Charts</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">Historical Data</a>
+                <a href="#">Investment Guide</a>
+                <a href="#">API Access</a>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <p style="font-size: 13px; margin-bottom: 12px; color: rgba(255,255,255,0.6);">
+                    We provide real-time spot prices, charts, and analysis for silver investors worldwide.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 SilverPrice.org. All rights reserved. Data provided for informational purposes only.
+        </div>
+    </footer>
+
+    <script>
+        // Reading Progress Bar
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+</body>
+
+</html>
