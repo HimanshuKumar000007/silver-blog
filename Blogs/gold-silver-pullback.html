@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Gold and Silver Pull Back After Recent Rally | Bond Yields & Dollar | SilverPrice</title>
+    <meta name="description"
+        content="Gold and silver prices retreat as bond yields rise and the dollar strengthens. Explore the key drivers behind this pullback and what it means for the future.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC9JDN566T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KC9JDN566T');
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Branding - Financial Theme */
+            --brand-primary: #0f172a;
+            --brand-secondary: #1e293b;
+            --brand-accent: #0ea5e9;
+            --brand-gold: #eab308;
+            --brand-silver: #94a3b8;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--brand-gold) 0%, var(--brand-silver) 100%);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Header */
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: #fbbf24;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--brand-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 0 0 1px var(--border-light);
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-text strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.85;
+            color: #2c3e50;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-left: 4px solid var(--brand-gold);
+            padding: 24px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .highlight-box h3 {
+            font-size: 17px;
+            color: #b45309;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight-box li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #92400e;
+            list-style-type: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .highlight-box li::before {
+            content: "•";
+            color: var(--brand-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: var(--brand-primary);
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--brand-secondary);
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 3.5em;
+            line-height: 0.8;
+            font-weight: 700;
+            padding-right: 8px;
+            padding-top: 4px;
+            color: var(--brand-gold);
+            font-family: var(--font-display);
+        }
+
+        ul {
+            margin-bottom: 28px;
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        /* Sidebar Widgets */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Author Box */
+        .author-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .author-avatar-lg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-family: var(--font-display);
+            margin-bottom: 0;
+        }
+
+        /* Social Share Sidebar (Desktop) */
+        .share-sidebar {
+            position: absolute;
+            left: -60px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 18px;
+            box-shadow: var(--shadow-card);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            color: var(--brand-gold);
+            transform: scale(1.1);
+            border-color: var(--brand-gold);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Reading Progress -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">Silver<span>Price</span></a>
+            <a href="../index.html" class="nav-link">
+                <span>&#8592;</span> Back to Dashboard
+            </a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <!-- Social Sidebar -->
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn">𝕏</div>
+                <div class="share-btn">f</div>
+                <div class="share-btn">in</div>
+                <div class="share-btn">🔗</div>
+            </div>
+        </div>
+
+        <!-- Main Article -->
+        <main class="article-content">
+            <div class="breadcrumb">Markets • Analysis</div>
+            <h1>Gold and Silver Pull Back After Recent Rally as Bond Yields Rise and Dollar Strengthens</h1>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=eab308&color=fff&size=128"
+                    class="author-avatar-sm" alt="Himanshu Kumar">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher • Feb 05, 2026</span>
+                </div>
+            </div>
+
+            <!-- Feature Image -->
+            <img src="gold_silver_pullback.png" alt="Gold and Silver Pullback"
+                style="width:100%; margin-bottom: 32px; box-shadow: var(--shadow-card);">
+
+            <article class="post-body">
+                <h2>Introduction: A Pause in the Precious Metals Rally</h2>
+                <p class="drop-cap">Following a period of strong and sustained gains, the prices of gold and silver have
+                    experienced a sharp retreat. This pullback comes as a rapid rise in government bond yields and a
+                    concurrent strengthening of the U.S. dollar have prompted a wave of profit-taking from investors and
+                    short-term traders. The recent rally had been powerfully fueled by escalating geopolitical tensions,
+                    mounting concerns over global debt levels, and a renewed and widespread demand for traditional
+                    safe-haven assets.</p>
+
+                <p>The current move lower highlights the delicate and often complex balance that governs the precious
+                    metals markets. While the long-term, structural case for holding gold and silver remains supported
+                    by a backdrop of persistent global uncertainty, their short-term price action is highly sensitive to
+                    the shifting dynamics of interest rates, currency movements, and investor positioning. This analysis
+                    will break down the key factors driving the current pullback and what it signals about the broader
+                    market sentiment.</p>
+
+                <h2>The Trifecta of Headwinds: Why Gold and Silver Fell After Rallying</h2>
+                <p>The recent decline in precious metals prices is not the result of a single factor, but rather a
+                    confluence of three powerful, interconnected financial headwinds.</p>
+
+                <div class="highlight-box">
+                    <h3>Key Drivers of the Corrective Move</h3>
+                    <ul>
+                        <li><strong>Rising Bond Yields:</strong> Increased opportunity cost of holding non-yielding
+                            assets.</li>
+                        <li><strong>Stronger U.S. Dollar:</strong> Makes metals more expensive for global buyers.</li>
+                        <li><strong>Profit-Taking:</strong> Traders locking in gains after a strong run-up.</li>
+                    </ul>
+                </div>
+
+                <h3>1. Rising Bond Yields and the "Opportunity Cost" Problem</h3>
+                <p>This is the most important and fundamental driver of the current pullback. Precious metals like gold
+                    and silver are, by their nature, non-yielding assets. They do not pay interest, dividends, or
+                    coupons. Their entire financial return comes from price appreciation.</p>
+
+                <p>Because of this, they are in constant competition with assets that do generate an income,
+                    particularly low-risk government bonds. When the yields on these government securities rise, as they
+                    have in the past week, it makes them a more attractive place to park capital. An investor can now
+                    earn a higher, relatively safe return from holding a U.S. Treasury bond or simply keeping cash in a
+                    high-yield money-market fund.</p>
+
+                <p>This increases what economists call the "opportunity cost" of holding a non-yielding asset like gold.
+                    In simple terms, the higher the yield on a safe bond, the more "income" an investor is giving up by
+                    choosing to hold gold instead. As this opportunity cost rises, a logical and rational rotation of
+                    capital occurs. Short-term traders and institutional funds are incentivized to sell their metal
+                    holdings and move that capital into interest-bearing instruments. It is a crucial point that gold
+                    and silver often struggle to advance, even if broader geopolitical risks remain elevated, when real
+                    interest rates are rising.</p>
+
+                <h3>2. The Impact of a Stronger U.S. Dollar</h3>
+                <p>The U.S. dollar and precious metals have a historically inverse relationship. Most major commodities,
+                    including gold and silver, are priced globally in U.S. dollars.</p>
+
+                <p>When the U.S. dollar strengthens against other currencies, it automatically makes gold and silver
+                    more expensive for buyers holding those other currencies (like the Euro, Yen, or Yuan). This can
+                    reduce demand at the margin. Furthermore, a stronger dollar is often a sign of tighter global
+                    financial conditions, which tends to act as a headwind for all commodity prices. As the dollar has
+                    gained ground in recent trading sessions, it has created a direct and powerful source of selling
+                    pressure across the entire precious metals complex.</p>
+
+                <h3>3. Profit-Taking and the Unwinding of "Crowded" Trades</h3>
+                <p>The recent and powerful surge in the prices of gold and silver had attracted a significant amount of
+                    capital from speculative traders and hedge funds. As prices approached key short-term technical
+                    resistance levels, and with the headwinds from rising yields and a stronger dollar emerging, many of
+                    these market participants have chosen to "lock in" their recent gains.</p>
+
+                <p>This type of profit-taking is a natural and healthy part of any strong market rally. When a trade
+                    becomes "crowded"—meaning a large number of speculators are all positioned in the same
+                    direction—even a small change in the macroeconomic environment can trigger a sharp and rapid
+                    pullback as these leveraged traders simultaneously unwind their positions. Silver, with its smaller
+                    market size and historically higher participation from speculative traders, tends to experience more
+                    volatile and pronounced price swings during these periods of profit-taking.</p>
+
+                <!-- Embedded Gold Widget -->
+                <div class="widget" style="margin: 32px 0; border-left: none; background: #fafafa;">
+                    <div style="font-size:12px; color:var(--text-muted); margin-bottom:10px; font-weight:700;">LIVE
+                        GOLD PRICE ACTION</div>
+                    <div class="tradingview-widget-container" style="height: 100px; width: 100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                                {
+                                    "symbol": "OANDA:XAUUSD",
+                                        "width": "100%",
+                                            "colorTheme": "light",
+                                                "isTransparent": true,
+                                                    "locale": "en"
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <h2>Interpreting the Signal: A Recalibration, Not a Reversal</h2>
+                <p>The current decline in the prices of gold and silver does not necessarily signal a collapse in the
+                    underlying demand for safe-haven assets. Instead, it reflects a short-term recalibration of market
+                    expectations regarding risk and, most importantly, monetary policy.</p>
+
+                <p>Investors appear to be balancing two powerful and opposing forces:</p>
+                <ul>
+                    <li><strong>The Long-Term Narrative of Uncertainty:</strong> The deep-seated reasons for owning
+                        precious metals—geopolitical risks, historically high global debt levels, and the potential for
+                        long-term structural inflation—continue to provide a strong source of underlying support.</li>
+                    <li><strong>The Short-Term Reality of Financial Conditions:</strong> The immediate headwinds of
+                        higher bond yields and a stronger U.S. dollar are creating near-term pressure on prices.</li>
+                </ul>
+
+                <p>This inherent tension helps to explain why gold and silver can experience sharp pullbacks, even when
+                    the fundamental macro risks that drove their initial rally remain completely unresolved.</p>
+
+                <h2>Why Silver is Often More Volatile Than Gold in a Pullback</h2>
+                <p>Silver's dual identity as both a precious metal and a critical industrial commodity makes it uniquely
+                    sensitive to shifts in economic expectations. When financial conditions tighten, as they are now
+                    with rising yields, the outlook for future economic growth can weaken. This leads to a downward
+                    revision in the expectations for silver's industrial demand component.</p>
+
+                <p>This combination of a weakening industrial demand outlook and the rapid unwinding of speculative
+                    positions means that silver's price often falls harder and faster than gold's during these
+                    corrective phases. As a result, silver typically experiences deeper pullbacks during periods of
+                    rising yields and dollar strength, even if gold, with its pure safe-haven status, manages to hold
+                    its ground relatively better.</p>
+
+                <h2>What to Watch Next: Is This a Temporary Pullback or a New Trend?</h2>
+                <p>Whether the current pullback in precious metals evolves into a deeper and more sustained correction
+                    depends on the evolution of several key factors in the coming weeks:</p>
+
+                <ul>
+                    <li><strong>The Trajectory of Bond Yields:</strong> Will yields continue to climb, or will they
+                        stabilize and begin to fall again?</li>
+                    <li><strong>The Strength of the U.S. Dollar:</strong> Will the dollar's rally continue, or will it
+                        reverse course?</li>
+                    <li><strong>Central Bank Policy Signals:</strong> The upcoming statements and guidance from central
+                        banks, particularly the U.S. Federal Reserve, will be critical in shaping interest rate
+                        expectations.</li>
+                    <li><strong>Geopolitical Developments:</strong> Any new escalation or de-escalation of global
+                        conflicts will have an immediate impact on safe-haven demand.</li>
+                    <li><strong>Inflation and Employment Data:</strong> Upcoming economic data will be crucial in
+                        determining the market's outlook for both inflation and economic growth.</li>
+                </ul>
+
+                <p>If yields continue to rise and the dollar remains strong, precious metals may face ongoing pressure
+                    in the short term. However, any renewed escalation in geopolitical tensions or a clear signal from
+                    central banks that they are pivoting towards a more accommodative monetary policy could quickly
+                    revive the demand for gold and silver.</p>
+
+                <h2>Final Thoughts</h2>
+                <p>The recent pullback in gold and silver prices, following a period of significant strength, is a
+                    classic example of how short-term financial conditions can temporarily override a positive long-term
+                    fundamental narrative. The rise in bond yields and the strengthening of the U.S. dollar have
+                    increased the opportunity cost of holding non-yielding metals, providing a clear catalyst for
+                    profit-taking and a short-term repositioning by traders.</p>
+
+                <p>However, the broader, structural reasons that investors have been turning to gold and silver in the
+                    first place—pervasive geopolitical risk, unsustainable government debt levels, and persistent policy
+                    uncertainty—have not disappeared. In the current transitional phase of the global economy, where the
+                    market is constantly recalibrating its expectations about growth, inflation, and policy, precious
+                    metals are likely to continue to move in sharp cycles of powerful rallies and sharp pullbacks.
+                    Understanding the specific forces that drive these moves helps to explain why the prices of gold and
+                    silver can fall, even in a world where uncertainty remains undeniably high.</p>
+
+                <p
+                    style="font-size: 13px; color: #64748b; font-style: italic; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                    Disclaimer: This article is for informational and educational purposes only and does not constitute
+                    financial or investment advice.
+                </p>
+            </article>
+
+            <!-- Author Box -->
+            <div class="author-box">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=eab308&color=fff&size=128"
+                    class="author-avatar-lg" alt="Himanshu Kumar">
+                <div class="author-info">
+                    <h4>About Himanshu Kumar</h4>
+                    <p>Himanshu is an Independent Market Researcher specializing in macroeconomic trends, safe-haven
+                        assets, and global monetary policy. He provides in-depth analysis on precious metals markets and
+                        their role in portfolio diversification.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar Widgets -->
+        <aside>
+            <div class="sticky-wrapper">
+
+                <!-- 1. Gold Chart -->
+                <div class="widget">
+                    <div class="widget-title">Gold Spot Price (XAU) <span>🟡</span></div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "OANDA:XAUUSD",
+                                        "width": "100%",
+                                            "height": 220,
+                                                "locale": "en",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(234, 179, 8, 1)",
+                                                                "underLineColor": "rgba(253, 224, 71, 0.3)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+                <!-- 2. Silver Chart -->
+                <div class="widget">
+                    <div class="widget-title">Silver Spot Price (XAG) <span>⚪</span></div>
+                    <div class="tradingview-widget-container" style="height: 220px; width:100%;">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+                            async>
+                                {
+                                    "symbol": "OANDA:XAGUSD",
+                                        "width": "100%",
+                                            "height": 220,
+                                                "locale": "en",
+                                                    "dateRange": "12M",
+                                                        "colorTheme": "light",
+                                                            "trendLineColor": "rgba(148, 163, 184, 1)",
+                                                                "underLineColor": "rgba(148, 163, 184, 0.3)",
+                                                                    "underLineBottomColor": "rgba(255, 255, 255, 0)",
+                                                                        "isTransparent": true,
+                                                                            "autosize": false,
+                                                                                "largeChartUrl": ""
+                                }
+                            </script>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="../index.html" class="logo"
+                    style="font-size: 20px; margin-bottom: 16px; display:block;">Silver<span>Price</span></a>
+                <p style="font-size: 13px; opacity: 0.7;">Real-time precious metals data and intelligence for the modern
+                    investor.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Markets</h4>
+                <a href="#">Gold</a>
+                <a href="#">Silver</a>
+                <a href="#">Platinum</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">Charts</a>
+                <a href="#">Reports</a>
+                <a href="#">News</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../terms.html">Terms</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 SilverPrice.org. All rights reserved. Data provided for informational purposes only.
+        </div>
+    </footer>
+
+    <script>
+        // Reading Progress
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+</body>
+
+</html>
