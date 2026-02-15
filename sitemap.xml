@@ -22,4 +22,19 @@
     <loc>https://silverpricehub.online/disclaimer.html</loc>
   </url>
 
+  <url>
+    <loc>https://silverpricehub.online/contact.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://silverpricehub.online/Blogs/us-stock-market-make-new-highs.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://silverpricehub.online/Blogs/market-vs-household-divergence.html</loc>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!-- Google Analytics -->
+    <link rel="canonical" href="https://silverpricehub.online/terms.html" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC9JDN566T"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -189,6 +190,66 @@
         }
 
         /* Footer */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo span {
+            color: var(--color-gold);
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Footer (Old Simple) */
         .simple-footer {
             text-align: center;
             padding: 40px 0;
@@ -223,7 +284,10 @@
         <div class="header-container">
             <a href="index.html" class="logo">Silver<span>Price</span></a>
             <nav class="nav-desktop">
-                <a href="index.html">← Back to Dashboard</a>
+                <a href="index.html">Dashboard</a>
+                <a href="index.html#news">News</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
@@ -310,9 +374,31 @@
     </div>
 
     <!-- Footer -->
-    <footer class="simple-footer">
-        &copy; 2025 SilverPrice. All rights reserved. <br>
-        <a href="index.html">Home</a> &bull; <a href="privacy.html">Privacy Policy</a>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size:14px; color:rgba(255,255,255,0.7)">Real-time precious metals analytics.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="index.html#dashboard">Dashboard</a>
+                <a href="index.html#news">News</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="mailto:humanshuk8@gmail.com">humanshuk8@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 SilverPrice. All rights reserved.</div>
     </footer>
 
 </body>
