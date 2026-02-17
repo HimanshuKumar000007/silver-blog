@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KC9JDN566T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KC9JDN566T');
+    </script>
+
+    <!-- Schema for Google Discover -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Analysis of Pre-emptive Credit Tightening by Financial Institutions: An Early Indicator of Rising Systemic Risk",
+      "datePublished": "2026-02-17",
+      "dateModified": "2026-02-17",
+      "author": {
+        "@type": "Person",
+        "name": "Himanshu Kumar",
+        "sameAs": [
+          "https://twitter.com/himanshukumar",
+          "https://www.linkedin.com/in/himanshukumar"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SilverPrice",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://silverpricehub.online/logo.png"
+        }
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://silverpricehub.online/Blogs/credit-tightening-risk.png",
+        "width": 1200,
+        "height": 675
+      }
+    }
+    </script>
+
+    <title>Pre-emptive Credit Tightening: An Early Warning of Rising Systemic Risk | SilverPrice Analysis</title>
+    <meta name="description"
+        content="Banks are quietly tightening credit—reducing limits, raising standards, cutting offers. This pre-emptive response reveals early signs of rising systemic risk that official data often misses.">
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="dateModified" content="2026-02-17">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Branding - Bull Market Theme */
+            --brand-primary: #0f172a;
+            /* Dark Navy */
+            --brand-secondary: #334155;
+            --brand-accent: #16a34a;
+            /* Growth Green */
+            --brand-chart: #0ea5e9;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --brand-gold: #d97706;
+            --border-light: #e2e8f0;
+
+            /* Fonts */
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Merriweather', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Layout */
+            --max-width: 1200px;
+            --radius-md: 12px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Reading Progress Bar (Growth Green) */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: var(--brand-accent);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+        }
+
+        /* Ticker Tape */
+        .ticker-wrap {
+            height: 40px;
+            overflow: hidden;
+            background: var(--brand-primary);
+        }
+
+        /* Header */
+        .main-header {
+            background: var(--brand-primary);
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--brand-accent);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Main Grid */
+        .page-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
+            position: relative;
+        }
+
+        /* Article Styling */
+        .breadcrumb {
+            font-size: 13px;
+            color: var(--brand-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--brand-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .meta-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 24px;
+        }
+
+        .author-avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 0 0 1px var(--border-light);
+        }
+
+        .meta-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-text strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .update-line {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: -10px;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        /* Typography */
+        .post-body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.85;
+            color: #334155;
+        }
+
+        .post-body p {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            color: var(--brand-primary);
+            letter-spacing: -0.5px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 19px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #15803d;
+        }
+
+        /* Executive Summary Box */
+        .exec-box {
+            background: #f0fdf4;
+            /* Very Light Green */
+            border-left: 4px solid var(--brand-accent);
+            padding: 24px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        /* Insight Box */
+        .insight-box {
+            background: #f0f9ff;
+            /* Light Blue for Insight */
+            border-left: 4px solid #0ea5e9;
+            padding: 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 32px 0;
+            font-family: var(--font-display);
+        }
+
+        .insight-box h3 {
+            margin-top: 0;
+            font-size: 17px;
+            color: #0369a1;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .insight-box li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #0c4a6e;
+            list-style-type: none;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .insight-box li::before {
+            content: "👉";
+            color: #0ea5e9;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .exec-box h4 {
+            margin-top: 0;
+            font-size: 17px;
+            color: #14532d;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .exec-box li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #166534;
+            list-style-type: none;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .exec-box li::before {
+            content: "📈";
+            color: var(--brand-accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4em;
+            line-height: 0.85;
+            font-weight: 700;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--brand-accent);
+            font-family: var(--font-display);
+        }
+
+        /* Quote Box */
+        blockquote {
+            font-size: 22px;
+            font-style: italic;
+            color: #475569;
+            text-align: center;
+            border-left: none;
+            background: transparent;
+            padding: 20px;
+            margin: 40px 0;
+            font-weight: 600;
+        }
+
+        /* Sidebar Widgets */
+        aside {
+            position: relative;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .widget-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--brand-primary);
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        /* Author Box */
+        .author-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .author-avatar-lg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-family: var(--font-display);
+            margin-bottom: 0;
+        }
+
+        /* Share */
+        .share-sidebar {
+            position: absolute;
+            left: -70px;
+            top: 0;
+            height: 100%;
+        }
+
+        .share-sticky {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #64748b;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .share-btn:hover {
+            background: var(--brand-accent);
+            color: white;
+            border-color: var(--brand-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background: linear-gradient(160deg, var(--brand-primary), var(--brand-secondary));
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: var(--brand-gold);
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 1024px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+
+            .share-sidebar {
+                display: none;
+            }
+
+            .sticky-wrapper {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sticky-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">Silver<span>Price</span></a>
+            <a href="../index.html" class="nav-link"><span>&#8592;</span> Strategy Dashboard</a>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <div class="share-sidebar">
+            <div class="share-sticky">
+                <div class="share-btn">𝕏</div>
+                <div class="share-btn">f</div>
+                <div class="share-btn">in</div>
+                <div class="share-btn">✉</div>
+            </div>
+        </div>
+
+        <main class="article-content">
+            <div class="breadcrumb">Financial Analysis &bull; Systemic Risk</div>
+
+            <h1>Analysis of Pre-emptive Credit Tightening by Financial Institutions: An Early Indicator of Rising
+                Systemic Risk</h1>
+
+            <div class="meta-header">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=16a34a&color=fff&size=64"
+                    class="author-avatar-sm" alt="Himanshu Kumar">
+                <div class="meta-text">
+                    <strong>Himanshu Kumar</strong>
+                    <span>Independent Market Researcher &bull; Feb 17, 2026</span>
+                </div>
+            </div>
+
+            <p class="update-line">Updated February 2026</p>
+
+            <!-- Hero Image -->
+            <img src="credit-tightening-risk.png" alt="Pre-emptive credit tightening as early warning of systemic risk"
+                style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 32px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+
+            <article class="post-body">
+
+                <p class="drop-cap"><strong>Financial institutions rarely signal an impending economic shift</strong>
+                    through explicit public pronouncements or dramatic policy changes. Instead, they communicate their
+                    assessment of risk through a series of subtle, incremental adjustments to their lending practices.
+                </p>
+
+                <p>These shifts often occur quietly, at the operational level, and are frequently imperceptible to the
+                    public until their cumulative effect becomes a macroeconomic reality. Over the past several months,
+                    anecdotal and emerging data suggest that a significant number of households are beginning to
+                    experience such subtle changes.</p>
+
+                <h2>Introduction: The Subtlety of Financial Sector Signals</h2>
+
+                <p>Individually, these adjustments may appear minor. Collectively, however, they represent a "quiet
+                    tightening" of credit conditions. Historically, such pre-emptive risk management by the banking
+                    sector has served as a more reliable leading indicator of building financial pressure within the
+                    economy than many official forecasts or central bank statements.</p>
+
+                <div class="exec-box">
+                    <h4>🔍 Signs of Quiet Credit Tightening</h4>
+                    <ul>
+                        <li>Unsolicited reductions in credit card limits</li>
+                        <li>More stringent approval processes for new credit applications</li>
+                        <li>A rise in minimum payment requirements</li>
+                        <li>A noticeable decline in promotional financing offers</li>
+                    </ul>
+                </div>
+
+                <h2>The Mechanics of "Quiet Credit Tightening"</h2>
+
+                <p>"Quiet credit tightening" is not a sign of institutional panic; it is a signal of a deliberate and
+                    rational recalibration of risk. As banks observe emerging trends in consumer financial health, they
+                    proactively adjust their lending policies to mitigate potential future losses.</p>
+
+                <h3>Reduction of Existing Credit Lines</h3>
+                <p>Banks may unilaterally reduce the credit limits on existing accounts, particularly for customers who
+                    carry high balances or exhibit riskier repayment patterns. For an individual consumer, this change
+                    may be perceived as a mere inconvenience. For the economy as a whole, however, it is a clear
+                    indication of rising caution within the core of the financial system.</p>
+
+                <h3>More Stringent Underwriting Standards</h3>
+                <p>The criteria for approving new credit cards and personal loans become stricter. This can involve
+                    higher credit score requirements, lower debt-to-income ratio thresholds, and more rigorous
+                    verification of income and employment.</p>
+
+                <h3>Contraction of Promotional Offers</h3>
+                <p>The availability of attractive offers, such as zero-percent interest on balance transfers or
+                    purchases, is reduced. These offers are a tool for customer acquisition in a low-risk environment;
+                    their withdrawal signals a shift towards risk aversion.</p>
+
+                <h3>Increased Minimum Payment Requirements</h3>
+                <p>Lenders may adjust the formula for calculating minimum monthly payments, forcing borrowers to
+                    de-leverage at a faster rate.</p>
+
+                <h2>The Rationale: Why Banks Act as a Leading Indicator</h2>
+
+                <p>Financial markets react to forward-looking forecasts and economic models. Commercial banks, by
+                    contrast, react to real-time cash flow data. Their unique position at the center of the financial
+                    system gives them a granular and immediate view of the health of household and small business
+                    balance sheets.</p>
+
+                <p>Banks possess a wealth of proprietary data that allows them to detect signs of financial stress long
+                    before they become visible in lagging, official macroeconomic statistics.</p>
+
+                <div class="insight-box">
+                    <h3>📊 What Banks Monitor in Real-Time</h3>
+                    <ul>
+                        <li>An increase in the number of customers making only minimum payments</li>
+                        <li>A rise in the utilization of cash advance facilities</li>
+                        <li>A slowdown in spending velocity on their card networks</li>
+                        <li>The first signs of rising delinquencies (late payments), which precede actual defaults</li>
+                    </ul>
+                </div>
+
+                <p>When these internal metrics begin to deteriorate, even slightly, risk management models within the
+                    banks trigger a pre-emptive adjustment of lending standards. This is not an emotional reaction; it
+                    is a data-driven, programmatic response based on historical experience.</p>
+
+                <blockquote>The historical record consistently shows that this internal, quiet tightening by the banking
+                    sector tends to appear before a broader economic slowdown becomes evident, not after it.
+                </blockquote>
+
+                <h2>The Disconnect Between Monetary Policy and Credit Availability</h2>
+
+                <p>A common misconception during this phase of the economic cycle is that an anticipated easing of
+                    monetary policy by a central bank will automatically translate into easier credit conditions for
+                    households. This is not always the case.</p>
+
+                <p>During a period of quiet tightening, the availability of credit can become a more powerful driver of
+                    economic activity than the cost of credit. A central bank can lower its benchmark interest rate, but
+                    this will have little to no positive effect on a household that can no longer get approved for a
+                    loan.</p>
+
+                <p>This creates a significant disconnect between policy headlines and the lived economic experience of
+                    the population. Financial markets may rally in anticipation of future rate cuts, creating a sense of
+                    optimism. At the same time, households may experience a tangible "credit crunch," feeling little to
+                    no relief from the central bank's actions.</p>
+
+                <h2>The Cumulative Impact on Household Finances</h2>
+
+                <p>The process of credit tightening is typically gradual and uneven, which is why its broader
+                    significance is often not recognized until late in the cycle. A slightly lower credit limit on one
+                    card, a rejected application for another, or a marginally higher minimum payment requirement are
+                    not, in isolation, dramatic events.</p>
+
+                <p>However, when these small adjustments are aggregated across millions of households, they result in a
+                    systemic reduction in financial flexibility and a decrease in the economy's overall liquidity
+                    buffer. By the time the cumulative effects of this tightening become obvious in the form of a clear
+                    slowdown in consumer spending or a spike in defaults, the underlying financial pressure has already
+                    become deeply embedded in household spending patterns.</p>
+
+                <h2>Broader Macroeconomic Implications</h2>
+
+                <p>The subtle, pre-emptive changes in bank lending behavior are a critical leading indicator that often
+                    precedes major shifts in consumer spending, corporate earnings, and, ultimately, financial market
+                    sentiment.</p>
+
+                <p>The emergence of quiet tightening does not guarantee that a severe economic crisis is imminent. It
+                    does, however, signal that the system's resilience is decreasing and its vulnerability to shocks is
+                    increasing.</p>
+
+                <div class="exec-box">
+                    <h4>⚠️ Key Warning Signals</h4>
+                    <ul>
+                        <li>System resilience is decreasing</li>
+                        <li>Vulnerability to economic shocks is increasing</li>
+                        <li>Consumer financial health is weaker than headline data suggests</li>
+                        <li>Banks are preparing for a more challenging period ahead</li>
+                    </ul>
+                </div>
+
+                <p>In economic cycles, it is often the quiet, incremental signals that carry the most weight. The loud
+                    pronouncements of market forecasters and policymakers can be driven by narrative and expectation,
+                    but the quiet actions of bank risk managers are driven by the hard reality of cash flow data.</p>
+
+                <h2>Conclusion: A Shift from Risk-On to Risk-Off</h2>
+
+                <p>Commercial banks do not have a mandate to predict recessions. Their primary mandate is to manage
+                    risk. When their lending standards tighten pre-emptively and quietly, it is a direct reflection of a
+                    calculated increase in the perceived riskiness of the economic environment.</p>
+
+                <p>This shift occurs deep within the financial system, long before it is reflected in official
+                    government statistics, corporate earnings reports, or market prices.</p>
+
+                <p>The broader economy rarely turns suddenly. It first experiences a gradual and often invisible
+                    tightening of credit conditions. The current trend of quiet credit tightening is, therefore, a
+                    significant and cautionary signal. It suggests that the underlying financial health of the consumer
+                    is weaker than the headline economic data might suggest and that the financial system is proactively
+                    preparing for a more challenging period ahead.</p>
+
+                <p
+                    style="font-size:12px; color:gray; font-style:italic; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 40px;">
+                    Disclaimer: This article is for informational and educational purposes only and does not constitute
+                    financial or investment advice.</p>
+
+            </article>
+
+            <!-- Author Box -->
+            <div class="author-box">
+                <img src="https://ui-avatars.com/api/?name=Himanshu+Kumar&background=16a34a&color=fff&size=160"
+                    class="author-avatar-lg" alt="Himanshu Kumar">
+                <div class="author-info">
+                    <h4>Himanshu Kumar</h4>
+                    <p>Independent market researcher analyzing systemic financial risk, household economics, and early
+                        warning indicators in the global financial system.</p>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sticky-wrapper">
+                <div class="widget">
+                    <div class="widget-title">Recent Articles</div>
+                    <a href="markets-look-calm-households-stress.html"
+                        style="display:block; margin-bottom:12px; color:#334155; font-size:15px; font-weight:600;">Markets
+                        Look Calm, Households Stressed</a>
+                    <a href="wells-Fargo-misses-profit-expectations.html"
+                        style="display:block; margin-bottom:12px; color:#334155; font-size:15px; font-weight:600;">Wells
+                        Fargo Misses Profit Expectations</a>
+                    <a href="ai-driven-automation-labor-market.html"
+                        style="display:block; color:#334155; font-size:15px; font-weight:600;">AI-Driven Automation &
+                        Labor Market</a>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Silver<span>Price</span></div>
+                <p style="font-size:13px; line-height:1.6;">Real-time silver price tracking with comprehensive market
+                    analysis and educational resources.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About Us</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../terms.html">Terms of Service</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 SilverPrice. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Progress Bar Script -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        });
+    </script>
+
+</body>
+
+</html>
